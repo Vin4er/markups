@@ -1,0 +1,904 @@
+<!doctype html>
+<html> 
+	<head> 
+		<title>EZS</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <![endif]-->
+
+		<link  type="text/css" rel="stylesheet" href="css/stylesheets/screen.css"  charset="utf-8">
+
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/swiper-slider/idangerous.swiper.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/bootstrap-modal/css/bootstrap.min.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/pickmeup-datepicker/css/pickmeup.min.css">
+
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"> </script>
+
+		<script src="js/swiper-slider/idangerous.swiper.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/bootstrap-modal/js/bootstrap.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/pickmeup-datepicker/js/jquery.pickmeup.min.js"></script>
+		<script src="js/jquery.mask.js"></script>
+		<script type="text/javascript" src="js/js.js">	</script>
+		
+		<!--[if lt IE 9]>
+			<script  type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		
+
+		<header>
+			<div class="content-width admin">
+				<a href="/" class="logo" >
+					<img src="images/logo.png" alt="ESZ.ru">
+				</a>
+
+				<div class="auth fr">
+					<div class="username"><i></i><span>Скоропостижный</span></div>
+					<div class="actions">
+						<a href="#" class="settings" title="Настройки"><i></i><span>настройки</span></a>
+						<a href="#" class="logout" title="Выход"><i></i><span>выход</span></a>
+					</div>
+				</div>
+
+				<nav class="fr">
+					<div class="nav">
+						<a href="#" title="Заявки"><span class="name">Заявки</span><span class="counter">10</span></a>
+						<a href="#" title="Предложения"><span class="name">Предложения</span><span class="counter">1024</span></a>
+						<a href="#" title="Партнеры"><span class="name">Партнеры</span></a>
+						<a href="#" title="Обратная связь"><span class="name">Обратная связь</span></a>
+						<a href="#" title="Тарифы"><span class="name">Тарифы</span></a>
+					</div>
+				</nav>
+			</div>
+		</header>
+	
+		<section>
+			<div class="content-width">
+				<h1 class="admin-title"><span>Заявки</span></h1>
+				<div class="admin-tables tables">
+					<div class="tab-links">
+						<a href="#" class="active" title="Новые"><span class="title">Новые</span><span class="conter">122<span>(4)</span></span></a>
+						<a href="#" title="отправленные"><span class="title">отправленные</span><span class="conter">12</span></a>
+						<a href="#" title="отложенные"><span class="title">отложенные</span><span class="conter">123</span></a>
+						<a href="#" title="удаленные"><span class="title">удаленные</span><span class="conter">123</span></a>
+						<a href="#" title="спорные"><span class="title">спорные</span><span class="conter">321</span></a>
+					</div>
+					<div class="admin-table-filter">
+						<form action="/" method="post">
+							<div class="search-input">
+								<input type="text" placeholder="Поиск по заявкам">
+								<input type="submit">
+							</div>
+							<div class="date-filter">
+								<div class="dates">
+									<div class="date-choose">
+										<div class="dateshidden">
+											<input type="text" id="dpd1">
+										</div>
+										<i></i>
+										<span>30 отк 2014 - 10 ноя 2014</span>
+									</div>									
+								</div>
+							</div>
+							<div class="type-filter">
+								<div class="select">
+									<select name="" id="">
+										<option value="1" data-not-view="4" data-counter="2">Кредиты</option>
+										<option value="2" data-not-view="4" data-counter="1">Страхование</option>
+										<option value="3" data-not-view="4" data-counter="5">Туры</option>
+										<option value="4" data-not-view="4" data-counter="4">Все заявка</option>
+									</select>									
+								</div>
+							</div>
+							
+						</form>
+					</div>
+
+					<div class="table admin-table">
+						<div class="thead">
+							<div class="row">
+								<div class="cell item-1">
+									<div class="select">
+										<select name="" id="">
+											<option value="1">Выделить все</option>
+											<option value="2">Отметить как просмотренные</option>
+											<option value="3">Отметить как непросмотренные</option>
+											<option value="4">Отправить партнерам</option>
+											<option value="5">Отложить</option>
+											<option value="6">Удалить</option>
+										</select>									
+									</div>
+								</div>
+								<div class="cell item-2"><span>ID заявки</span></div>
+								<div class="cell item-3"><span>Подкатегория</span></div>
+								<div class="cell item-4"><span>Сумка</span></div>
+								<div class="cell item-5"><span>Срок</span></div>
+								<div class="cell item-6"><span>Имя клиента</span></div>
+								<div class="cell item-7"><span>Контакты</span></div>
+								<div class="cell item-8"><span>Получена</span></div>
+								<div class="cell item-9"><span>Окончание</span></div>								
+							</div>
+						</div>
+						<div class="tbody">
+							<div class="row hightlight">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7">
+								</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row hightlight">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7"> </div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row hightlight">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7"> 	</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7">
+									<span class="mark"></span>
+								</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row hightlight">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7">
+									<span class="mark"></span>
+								</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row hightlight">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7">
+									<span class="mark"></span>
+								</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7">
+									<span class="mark"></span>
+								</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row hightlight">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7">
+									<span class="mark"></span>
+								</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row hightlight">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7">
+								</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7">
+								</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row hightlight">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7">
+								</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row hightlight">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7">
+									<span class="mark"></span>
+								</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7">
+									<span class="mark"></span>
+								</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row hightlight">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7">
+									<span class="mark"></span>
+								</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row hightlight">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7">
+								</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7">
+									<span class="mark"></span>
+								</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row hightlight">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7">
+									<span class="mark"></span>
+								</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="cell item-1">
+									<div class="checkbox">
+										<label><input type="checkbox"><ins></ins></label>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<span>1234567</span>
+								</div>
+								<div class="cell item-3">
+									<span>Потреб. кредит</span>
+								</div>
+								<div class="cell item-4">
+									<span>15 000 000</span>
+								</div>
+								<div class="cell item-5">
+									<span>1 год</span>
+								</div>
+								<div class="cell item-6">
+									<span>Скоропостижный Николай Анатольевич</span>
+								</div>
+								<div class="cell item-7">
+								</div>
+								<div class="cell item-8">
+									<span>14 окт 2014</span>
+								</div>
+								<div class="cell item-9">
+									<span>15 ноя 2014</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="paginator">
+						<a href="#" class="np prev"><</a>
+						<span>1</span>
+						<a href="#">2</a>
+						<a href="#">3</a>
+						<a href="#">4</a>
+						<a  href="#" class="np next">></a>
+					</div>
+
+				</div>
+
+
+			</div>
+
+		
+
+		</section>
+
+		<footer>
+			<div class="content-width ">
+				<div class="table">
+					<div class="row">
+						<div class="footer-item cell footer-item-1">
+							<div class="copyright">© 2014 Единый Сервис Заявок</div>
+							<div class="share">
+								<a href="#" class="vk" title="втонтакте"><i></i></a>
+								<a href="#" class="fb" title="facebook"><i></i></a>
+								<a href="#" class="tw" title="twitter"><i></i></a>
+							</div>
+						</div>
+						<div class="footer-item cell footer-item-2"> 
+							<a href="#" title="" class="title footer-link">О сервисе</a>
+							<a href="#" class="footer-link">Контакты</a>
+							<a href="#" class="footer-link">Обратная связь</a>
+						</div>
+						<div class="footer-item cell footer-item-3"> 
+							<a href="#" title="" class="title footer-link">покупателям</a>
+							<a href="#" class="footer-link">Помощь</a>
+							<a href="#" class="footer-link">Пользовательское соглашение</a>
+						</div>
+						<div class="footer-item cell footer-item-4"> 
+							<a href="#" title="" class="title footer-link">партнерам</a>
+							<a href="#" class="footer-link">Личный кабинет</a>
+							<a href="#" class="footer-link">Договор-оферта</a> 
+							<a href="#" class="footer-link">Тарифы</a> 
+						</div>
+						<div class="footer-item cell footer-item-5">
+							<a href="#" class="legion-logo">Разработка сайта</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	<!-- Модпльные окна -->
+
+		<div class="modal-wrapper">
+
+			<!-- Авторизация -->
+			<div class="bootstrap-modal modal fade auth"     id="auth"     tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+				<div class="modal-dialog">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="modal-title">Авторизация</div>
+							<form action="/" method="POST">
+								<div class="wrap-input">
+									<label for="">
+										<span>Логин</span>
+										<input required type="text">
+									</label>
+								</div>
+								<div class="wrap-input">
+									<label for="">
+										<span>Пароль</span>
+										<input  required type="password">
+									</label>
+								</div>
+								<div class="wrap-btn">
+									<input type="submit" value="Войти">
+									<div class="other">
+										<div>Или <a href="#reg"><span>зарегистрироваться</span></a></div>
+										<div><a  data-toggle="modal"   data-target="#recovery" href="javascript:;"><span>Забыли пароль</span></a></div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- / Авторизация -->
+
+			<!-- Обратная связь -->
+			<div class="bootstrap-modal modal fade feedback" id="feedback" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+				<div class="modal-dialog">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="modal-title">обратная связь</div>
+							<form action="/" method="POST">
+								<div class="wrap-input" required>
+									<label for="">
+										<span>Тема</span>
+										<select  name="" id=""><option value="">Предложения по сотрудничеству</option></select>
+									</label>
+								</div>
+								<div class="wrap-input" >
+									<label for="">
+										<span>Сообщение</span>
+										<textarea name="" id="" cols="30" rows="10"></textarea>
+									</label>
+								</div>
+								<div class="wrap-input" required>
+									<label for="">
+										<span>Имя</span>
+										<input type="text" required placeholder="Фалимия Имя Отчество">
+									</label>
+								</div>
+								<div class="wrap-input phone" required>
+									<label for="">
+										<span>Телефон</span>
+										<input type="text" required placeholder="+7 (123) 1112233">
+									</label>
+								</div>
+								<div class="wrap-input" required>
+									<label for="">
+										<span>Адрес электронной почты</span>
+										<input type="text" required placeholder="your@e-mail.com">
+									</label>
+								</div>
+								<div class="wrap-input wrap-capcha" required>
+									<label for="">
+										<span>Код безопасности</span>
+										<input type="text" required placeholder="Введите код с картинки">
+										<div class="capcha">
+											<div class="capcha-item">
+												<img src="images/capcha.png" alt="">
+												<a href="javascript:;"><span>Обновить</span></a>
+											</div>
+										</div>
+									</label>
+								</div>
+								<div class="wrap-btn">
+									<input type="submit" data-toggle="modal"  data-target="#thanx"  value="Отправить">
+									<div class="other">
+										<p>
+											<span>
+												Поля, отмеченные звездочкой, обязательные для заполнения.<br> Также необходимо заполнить хотя бы одно поле с контактными данными.
+											</span>
+										</p>
+									</div>
+								</div>
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- / Обратная связь -->
+
+			<!-- Восстановление -->
+			<div class="bootstrap-modal modal fade recovery" id="recovery" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+				<div class="modal-dialog">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="modal-title">восстановление пароля</div>
+							<form action="/" method="POST">
+								<div class="wrap-input" required>
+									<label for="">
+										<span>Адрес электронной почты</span>
+										<input type="text" required placeholder="your@e-mail.com">
+										<p class="label">
+											<span>Новый пароль будет выслан на указанный при регистрации адрес электронной почты</span>
+										</p>
+									</label>
+								</div>
+								<div class="wrap-btn">
+									<input type="submit"  data-toggle="modal"  data-target="#restored" value="Отправить">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /  Восстановление -->
+
+			<!-- Восстановленно -->
+			<div class="bootstrap-modal modal fade restored" id="restored" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+				<div class="modal-dialog">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="modal-title">восстановление пароля</div>
+							<p class="text ">Новый пароль выслан на указанный при регистрации адрес электронной почты</p>	
+							<div class="wrap-btn">
+								<a class="btn" href="javascript:;"  data-dismiss="modal">Вернуться на главную</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /  Восстановленно -->
+
+			<!-- Спасибо -->
+			<div class="bootstrap-modal modal fade thanx"    id="thanx"    tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+				<div class="modal-dialog">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="modal-title">Спасибо за интерес<br>к проекту!</div>
+							<p  class="text">
+								Ваше сообщение отправлено, <br>мы ответим вам в самое ближайшее время.
+							</p>
+							<div class="wrap-btn">
+								<a class="btn" href="javascript:;"  data-dismiss="modal">Вернуться на главную</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- / Спасибо -->
+		</div>
+	<!-- / Модальные окна -->
+
+	</body>
+</html>
+	

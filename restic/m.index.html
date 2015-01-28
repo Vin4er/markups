@@ -1,0 +1,376 @@
+<!doctype html>
+<html> 
+	<head> 
+		<title>Рестик</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <![endif]-->
+	    <meta name="viewport" content="width=device-width">
+		<link  type="text/css" rel="stylesheet" href="css/stylesheets/screen.css"  charset="utf-8">
+		<link  type="text/css" rel="stylesheet" href="css/stylesheets/mobile.css"  charset="utf-8">
+		<link  type="text/css" rel="stylesheet"  cssWatch="no"   href="css/animate.css"  charset="utf-8">
+		<link href="js/select2-3.5.2/select2.css"  cssWatch="no"  rel="stylesheet">
+		<link href="css/font-awesome.min.css"  cssWatch="no"  rel="stylesheet">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/swiper-slider/idangerous.swiper.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/bootstrap/css/bootstrap.min.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/pickmeup-datepicker/css/pickmeup.min.css">
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"> </script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"> </script>
+		<script src="js/swiper-slider/idangerous.swiper.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/select2-3.5.2/select2.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/bootstrap/js/bootstrap.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/chart.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/pickmeup-datepicker/js/jquery.pickmeup.min.js"></script>
+		<script src="js/jquery.mask.js"></script>
+ 		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script src="js/m_js.js"></script>
+
+		<!--[if lt IE 9]>
+			<script  type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+
+	<body class="mobile">
+		<nav>
+			<div class="nav-controls"><a class="toggle-menu" href="javascript:;"><i class="fa fa-times"></i></a></div>
+			<ul>
+				<li><a href="#"><i class="fa fa-search"></i><span>Найти ресторан</span></a></li>
+				<li><a href="#"><i class="fa fa-comment-o flip-horizontal"></i><span>Написать отзыв</span></a></li>
+				<li><a href="#"><i class="fa fa-tablet"></i><span>Получить iPad</span></a></li>
+				<li><a href="#"><i class="fa fa-star-o"></i><span>Топ ресторанов</span></a></li>
+			</ul>
+		</nav>
+				<header class="dark">
+				<div class="main-menu ib">
+					<a href="javascript:;">
+						<i class="fa fa-bars"></i>
+					</a>
+				</div>
+				<a href="/" class="logo  ib">
+					<img src="images/logo.png" alt="">
+				</a>
+				
+				<div class="fr ib">
+					<div class="change-city ib">
+						<a href="javascript:;" class="change-city-link">
+							<i class="fa fa-map-marker"></i>
+							<span></span>
+							<input type="hidden">
+						</a>
+						<div class="multiselect-wrap change-city-link-sel"  data-dropdown-css-class="search-block-drop search-content-block-drop" data-placeholder="Выберите тип кухни">
+							<a class="hidden" href="javascript:;">
+								<span>Выбрано</span>
+								<span> (</span><span class="multiselect-counter">0</span><span>)</span>
+								<span class="multiselect-arrow" role="presentation">
+									<b role="presentation"></b>
+								</span>
+							</a>
+							<!-- список чебоксов для выпадающего списка -->
+							<div class="drop ccities" style="display: none">
+								<div class="search">
+									<input type="text" placeholder="Найти город">
+									<i class="fa fa-search"></i>
+									<div class="ste"></div>
+								</div>
+								<ul>
+									<li>
+										<label class="checkbox">
+											<input value="21312" name="checkboxName"  type="radio">
+											<ins></ins>
+											<span>Москва</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox">
+											<input value="32131" checked="ture" name="checkboxName" type="radio">
+											<ins></ins>
+											<span>Санкт-Петербург</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox">
+											<input value="3423"  name="checkboxName" type="radio">
+											<ins></ins>
+											<span>Уфа</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox">
+											<input value="153" name="checkboxName"  type="radio">
+											<ins></ins>
+											<span>Самара</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox">
+											<input value="531" name="checkboxName"  type="radio">
+											<ins></ins>
+											<span>Екатеринбург</span>
+										</label>
+									</li>
+								</ul>
+								<a href="javascript:;" onclick="$('.search-content-block-drop').click();" class="grn-btn set-city	">Выбрать город</a>
+							</div>
+						</div>
+					</div>
+				</div>
+		</header>
+		<div class="body">
+			<section class="index">
+				<!-- картинка заблуренная -->
+				<!-- <div class="img-main-bg blured" ></div> -->
+
+				<!-- заголовочный блок -->
+				<div class="main-container "  style="background-image: url(images/main-bg.png)">
+					<div class="main-z-index">
+						<!-- заголовок -->
+						<div class="main-title" >
+							
+							<div class="title">
+								<h1>Народный рейтинг ресторанов</h1>
+							</div>
+							<div class="search-block">
+								<div class="tab-toggler ">
+									<div class="tab-headers">
+										<span class="label">Найти ресторан:</span>
+									</div>
+									<form action="">
+										<div class="form-wrapper table">
+											<div class="row">
+												<div class="cell">
+													<div class="wrap-select">
+														<select name="" id="" class="placeholder" data-dropdown-css-class="search-block-drop" data-allow-clear="true" data-placeholder="Выберите район или метро">
+															<option value=""></option>
+															<optgroup label="Районы">
+																<option value="r1">Петродворцовый</option>
+																<option value="r2">Красносельский</option>
+																<option value="r3">Московский</option>
+																<option value="r3">Ленинский</option>
+																<option value="r3">Дворцовый</option>
+																<option value="r3">Петроградски</option>
+															</optgroup>
+															<optgroup label="Метро">
+																<option value="m1">Автово</option>
+																<option value="m2">Ленинский проспект</option>
+																<option value="m3">Московская</option>
+																<option value="m3">Кировский завод</option>
+																<option value="m3">Купчино</option>
+															</optgroup>
+														</select>
+													</div>
+												</div>
+												<div class=" cell check-toggler">
+													<div class="table">
+														<div class=" lst">
+															<div class="cell"><label><input type="checkbox"><span>дёшево</span></label></div>
+															<div class="cell"><label><input type="checkbox"><span>демократично</span></label></div>
+															<div class="cell"><label><input type="checkbox"><span>дорого</span></label></div>
+														</div>
+													</div>
+												</div>
+												<div class="cell">
+													<div class=" btn-search fr">
+														<input type="submit" class="grn-btn" value="ПОИСК">
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							
+							
+						</div>	
+					</div>
+				</div>
+
+				<!-- Бронирование -->
+				<div class="reservation left presentation-blocks animate-scroll">
+					<div class="content-width">
+						<i class="bg-img"></i>
+						<div class="fr">
+						<h2>Бронирование в 1 клик</h2>
+						<p>
+							<span>Выберите и забронируйте ваш любимый стол! Без посредников, только прямая онлайн связь с рестораном. Выбор стола онлайн! </span>
+						</p>
+						<div class="form">
+							<form action="/" method="POST">
+								<div class="search-reservation search-select" >
+									<!-- 
+										Юзается select2 . поддержка подгрузки результатов ajax
+										http://ivaynberg.github.io/select2/ 
+										==============
+										либо аяксом - апи плагина позволяет. когда будет апи для получения списка - могу сам сделать подгрзку;
+										либо весь список грузим в дата атрибут и вообще не ебем мозг, как сделано сейчас
+										==============
+										data-data-array = [
+											id:     ID ресторана,
+											name:   название ресторана
+											rating: рейтинг  ресторана
+										];
+									-->
+									<input class="select" type="hidden" name=""  
+										data-data-array='[{"id": "0", "text": "story", "rating":"3.2"}, {"id": "1", "text": "Стриптизбар", "rating":"2"}, {"id": "3", "text": "Бахрома", "rating":"2"}, {"id": "2", "text": "Кайот", "rating":"4.2"}]'  
+										data-dropdown-css-class="search-block-drop typehead" 
+										data-placeholder="Начните вводить название ресторана..">
+								</div>
+								<div class="grd-btn">
+									<div class="wrp animated"></div>
+									<div class="txt"><input type="submit" value="Найти и Забронировать ресторан"></div>
+								</div>
+							</form>
+						</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Оценить -->
+				<div class="likeit right presentation-blocks animate-scroll">
+					<div class="content-width">
+						<!-- <i class="bg-img"></i> -->
+						<!-- <div class="fr"> -->
+							<h2>Вкусно поели? Не молчите - расскажите</h2>
+							<p><span>«Рестик» это первая система искусственного интеллекта которая понимает ваш отзыв.</span> <a href="#">Подробнее</a></p>
+							<form action="/" method="post">
+								<div class="add-review">
+									<div class="wrap-input search-select">
+									<!-- 
+											Юзается select2 . поддержка подгрузки результатов ajax
+											http://ivaynberg.github.io/select2/ 
+											==============
+											либо аяксом - апи плагина позволяет. когда будет апи для получения списка - могу сам сделать подгрзку;
+											либо весь список грузим в дата атрибут и вообще не ебем мозг, как сделано сейчас
+											==============
+											data-data-array = [
+												id:     ID ресторана,
+												name:   название ресторана
+												rating: рейтинг  ресторана
+											];
+										-->
+										<input class="select" type="hidden" name=""  
+											data-data-array='[{"id": "0", "text": "story", "rating":"3.2"}, {"id": "1", "text": "Стриптизбар", "rating":"2"}, {"id": "3", "text": "Бахрома", "rating":"2"}, {"id": "2", "text": "Кайот", "rating":"4.2"}]'  
+											data-dropdown-css-class="search-block-drop typehead" 
+											data-placeholder="Начните вводить название ресторана..">
+									</div>
+									<div class="wrap-textarea">
+										<textarea   name="" id=""  placeholder="Введите отзыв.."></textarea>
+									</div>
+									<div class="bot">
+										<!-- 
+										СОбытие на отправку ормы инициалиируется в методе window.sendReview(); 
+										там же организован пересчет круговой диаграммы -->
+										<div class="liker">
+											<div class="new-review">
+												<p><i></i>Робот «Рестик»  оценил ваш отзыв на </p>
+												<div class="circle"  data-counter="1.9">
+													<canvas class="countries" width="100%" height="100%"></canvas>
+													<span class="rating-counter">0</span>
+												</div>
+											</div>
+											<div class="grd-btn ">
+												<div class="wrp animated"></div>
+												<input type="button" class="grn-btn" value="Оставить отзыв">
+											</div>
+										</div>
+									</div>
+								</div>								
+							</form>
+						</div>
+					<!-- </div> -->
+				</div>
+
+				<!-- Экспертная оценка -->
+				<div class="expert right presentation-blocks animate-scroll">
+					<div class="content-width">
+						<div class="fr">
+						<i class="bg-img"></i>
+						<h2>Независимая экспертная оценка</h2>
+						<p><span>Мы работаем с тремя профессиональными критиками, которых по голосованию пользователей можно отправить в любой ресторан для того, что бы они отразили свое мнение о заведении.</span></p>
+						<a  href="#" class="grd-btn">
+							<div class="wrp animated"></div>
+							<div class="txt"><span>Подробнее об экспертах</span></div>
+						</a>
+					</div>
+					</div>
+				</div>
+
+
+				<!-- Для дестораторов -->
+				<div class="destorators">
+					<div class="content-width">
+						<h2><span class="h2-liner">Для рестораторов</span></h2>
+						<p>Начните получать бесплатных гостей прямо сейчас </p>
+						<div class="table">
+							<div class="row">
+								<div class="cell item-1">
+									<div>
+										<i></i>
+										<div class=" text">
+											<div class="title">Для хостес</div>
+											<div class="label">Карта рассадки гостей за 5 минут! Книга бронирования удобней, чем тетрадка - вы наглядно распределяете гостей по столам!</div>
+										</div>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<div>
+										<i></i>
+										<div class="div text">
+											<div class="title">Для управляющего</div>
+											<div class="label">Полная статистика посещения ресторана, время пребывания и т.д.</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bg-img">
+						<div class="content-width">
+							<h2>Получите iPad в подарок</h2>
+							<p>
+								Подключитесь к безпосредниковой системе бронирования столов 
+								и получили iPad с установленной системой менеджмента гостей 
+								«NameRes» ресторана <b>бесплатно!</b>
+							</p>
+			
+							<a  data-toggle="modal" data-target="#hook-up" href="#hook-up"  class="grd-btn">
+								<div class="wrp animated"></div>
+							<div class="txt"><span>Подключить мой ресторан</span></div>
+						</a>
+						</div>
+					</div>
+				</div>
+
+
+
+			</section>	
+<!-- Футер -->
+			<footer class="light">
+				<div class="content-width">
+
+					<div class="table">
+						<div class="row">
+							<div class="cell item-1">
+								<div class="download">
+									<p>Скачайте бесплатное мобильное приложение</p>
+									<a href="#" class="droid"></a>
+									<a href="#" class="apple"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cop">
+						<span>© 2014 Рестик.Ru</span>
+						<a href="#">Полная версия</a>
+					</div>
+				</div>
+			
+			</footer>
+	<!-- Футер -->
+
+
+		</div>
+	
+</html>
+	

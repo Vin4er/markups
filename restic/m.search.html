@@ -1,0 +1,659 @@
+<!doctype html>
+<html> 
+	<head> 
+		<title>Рестик</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <![endif]-->
+	    <meta name="viewport" content="width=device-width">
+		<link  type="text/css" rel="stylesheet" href="css/stylesheets/screen.css"  charset="utf-8">
+		<link  type="text/css" rel="stylesheet" href="css/stylesheets/mobile.css"  charset="utf-8">
+		<link  type="text/css" rel="stylesheet"  cssWatch="no"   href="css/animate.css"  charset="utf-8">
+		<link href="js/select2-3.5.2/select2.css"  cssWatch="no"  rel="stylesheet">
+		<link href="css/font-awesome.min.css"  cssWatch="no"  rel="stylesheet">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/swiper-slider/idangerous.swiper.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/bootstrap/css/bootstrap.min.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/pickmeup-datepicker/css/pickmeup.min.css">
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"> </script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"> </script>
+		<script src="js/swiper-slider/idangerous.swiper.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/select2-3.5.2/select2.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/bootstrap/js/bootstrap.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/chart.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/pickmeup-datepicker/js/jquery.pickmeup.min.js"></script>
+		<script src="js/jquery.mask.js"></script>
+ 		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script src="js/m_js.js"></script>
+
+		<!--[if lt IE 9]>
+			<script  type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+	<body class="mobile">
+		<nav>
+			<div class="nav-controls"><a class="toggle-menu" href="javascript:;"><i class="fa fa-times"></i></a></div>
+			<ul>
+				<li><a href="#"><i class="fa fa-search"></i><span>Найти ресторан</span></a></li>
+				<li><a href="#"><i class="fa fa-comment-o flip-horizontal"></i><span>Написать отзыв</span></a></li>
+				<li><a href="#"><i class="fa fa-tablet"></i><span>Получить iPad</span></a></li>
+				<li><a href="#"><i class="fa fa-star-o"></i><span>Топ ресторанов</span></a></li>
+			</ul>
+		</nav>
+		<div class="img-main-bg blured" style="background-image: url(images/main-bg-blured.png);"></div>
+		<header class="dark">
+				<div class="main-menu ib">
+					<a href="javascript:;">
+						<i class="fa fa-bars"></i>
+					</a>
+				</div>
+				<a href="/" class="logo  ib">
+					<img src="images/logo.png" alt="">
+				</a>
+				
+				<div class="fr ib">
+					<div class="change-city ib">
+						<a href="javascript:;" class="change-city-link">
+							<i class="fa fa-map-marker"></i>
+							<span></span>
+							<input type="hidden">
+						</a>
+						<div class="multiselect-wrap change-city-link-sel"  data-dropdown-css-class="search-block-drop search-content-block-drop" data-placeholder="Выберите тип кухни">
+							<a class="hidden" href="javascript:;">
+								<span>Выбрано</span>
+								<span> (</span><span class="multiselect-counter">0</span><span>)</span>
+								<span class="multiselect-arrow" role="presentation">
+									<b role="presentation"></b>
+								</span>
+							</a>
+							<!-- список чебоксов для выпадающего списка -->
+							<div class="drop ccities" style="display: none">
+								<div class="search">
+									<input type="text" placeholder="Найти город">
+									<i class="fa fa-search"></i>
+									<div class="ste"></div>
+								</div>
+								<ul>
+									<li>
+										<label class="checkbox">
+											<input value="21312" name="checkboxName"  type="radio">
+											<ins></ins>
+											<span>Москва</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox">
+											<input value="32131" checked="ture" name="checkboxName" type="radio">
+											<ins></ins>
+											<span>Санкт-Петербург</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox">
+											<input value="3423"  name="checkboxName" type="radio">
+											<ins></ins>
+											<span>Уфа</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox">
+											<input value="153" name="checkboxName"  type="radio">
+											<ins></ins>
+											<span>Самара</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox">
+											<input value="531" name="checkboxName"  type="radio">
+											<ins></ins>
+											<span>Екатеринбург</span>
+										</label>
+									</li>
+								</ul>
+								<a href="javascript:;" onclick="$('.search-content-block-drop').click();" class="grn-btn set-city	">Выбрать город</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</header>
+
+		<div class="body">
+	
+		<section class="map-item">
+			<div class="search-content-block ">
+					<div class="search-filter ">
+						<form action="" class="">
+							<div class="item-1 ">
+								<div class="cellwrapper">
+									<div class="label">Тип кухни</div>
+									<!-- 
+									Элемент multiselect с выпадающими чекбоксами в попапе - полноценный элемент. 
+										В дело идут именно эти чекбоксы, которые в html
+										отправляются тоже они
+										СОБЫТИЕ НА ИЗМЕНЕНИЕ  ПИШЕТСЯ ТАК:
+											$("body").on("multiselect", ".multiselect-wrap", function(){
+												$(this).find(":checked") - все чекнутые	
+											});
+
+										на сам див я повесил событие, обрабочик которого называется "multiselect"
+									-->
+									<div class="multiselect-wrap"  data-dropdown-css-class="search-block-drop search-content-block-drop" data-placeholder="Выберите тип кухни">
+										<a href="javascript:;">
+											<span>Выбрано</span>
+											<span> (</span><span class="multiselect-counter">0</span><span>)</span>
+											<span class="multiselect-arrow" role="presentation">
+												<b role="presentation"></b>
+											</span>
+										</a>
+										<!-- список чебоксов для выпадающего списка -->
+										<div class="drop" style="display: none">
+											<ul>
+												<li>
+													<label class="checkbox">
+														<input value="21312" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Австрийская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="32131"  name="checkboxName" type="checkbox">
+														<ins></ins>
+														<span>Авторская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="3423"  name="checkboxName" type="checkbox">
+														<ins></ins>
+														<span>Азербайджанская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="153" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Азиатская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="531" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Американская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="14323" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Английская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="1434"  name="checkboxName" type="checkbox">
+														<ins></ins>
+														<span>Арабская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="67" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Аргентинская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="111" type="checkbox">
+														<ins></ins>
+														<span>Армянская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="21312" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Болгарская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="3242" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Вегетарианская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input  value="632" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Восточная</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="165" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Вьетнамская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="321" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Грузинская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="1432" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Домашняя</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="11132" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Еврейская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="332" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Европейская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="as1" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Индийская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="3" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Болгарская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="31" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Вегетарианская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input  value="2" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Восточная</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="1"  name="checkboxName" type="checkbox">
+														<ins></ins>
+														<span>Вьетнамская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="1673" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Грузинская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="5121" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Домашняя</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="551" name="checkboxName"  type="checkbox">
+														<ins></ins>
+														<span>Еврейская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="81"  name="checkboxName" type="checkbox">
+														<ins></ins>
+														<span>Европейская</span>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox">
+														<input value="32411"  name="checkboxName" type="checkbox">
+														<ins></ins>
+														<span>Индийская</span>
+													</label>
+												</li>
+											</ul>
+											<a href="javascript:;" onclick="$('.search-content-block-drop').click();" class="grn-btn">Выбрать кухню</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item-2 ">
+								<div class="cellwrapper">
+									<div class="label">Район</div>
+									<div class="select-wrap">
+									<!-- 
+										#параметры для селекта
+											#data-allow-clear - параметр, чтобы был кресик "закрыть", когда чтот выбрано.
+											#data-dropdown-css-class - класс для открываещегося списка 
+											#data-placeholder - то что буже отображаться пока не выбрано ничего
+									-->
+										<select name="" id=""  data-allow-clear="true"  data-dropdown-css-class="search-block-drop search-content-block" data-placeholder="Выберите район или метро">
+											<option value=""></option>
+											<optgroup label="Районы">
+												<option value="21">Петродворцовый</option>
+												<option value="32">Красносельский</option>
+												<option value="43">Московский</option>
+												<option value="53">Ленинский</option>
+												<option value="63">Дворцовый</option>
+												<option value="73">Петроградски</option>
+											</optgroup>
+											<optgroup label="Метро">
+												<option value="1">Автово</option>
+												<option value="24">Ленинский проспект</option>
+												<option value="37">Московская</option>
+												<option value="36">Кировский завод</option>
+												<option value="38">Купчино</option>
+											</optgroup>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="item-3 fr">
+								<label class="checkbox">
+									<input type="checkbox">
+									<ins></ins>
+									<span>Топ 100</span>
+								</label>
+							</div>
+							<div class="sort-price  check-toggler">
+								<label><input checked type="checkbox"><span>До 500 р.</span></label>
+								<label><input type="checkbox"><span>500-1000 р</span></label>
+								<label><input type="checkbox"><span>от 1000 р.</span></label>
+							</div>
+						</form>
+					</div>
+					<div class="scrollable">
+						<div class="brdr">
+							<div class="restoran-list-sort ">
+								<div class="sort ">
+									<div class="search-counter ">
+										<span class="r">Найдено</span>
+										<span class="counter">256</span>
+										<span class="word">ресторанов</span>
+									</div>
+									<div class="sort-other ">
+										<a href="#"><span>по рейтингу</span><i>↑</i></a>
+										<a href="#" class="active"><span>по тенденциям</span><i>↓</i></a>
+										<a href="#"><span>по цене</span><i>↑</i></a>
+									</div>
+								</div>
+							</div>
+							<div class="similar-items">
+								<a href="#" class=" similar-item" >
+									<span class="text-wrap">
+										<span class="circle" data-counter="4.3">
+											<canvas class="countries" width="100" height="100" style="width: 100px; height: 100px;"></canvas>
+											<span class="rating-counter">4.3</span>
+										</span>
+										<span class="about">
+											<span class="title">Erarta Café</span>
+											<p><span>Ресторан-бар</span><span>В.О. 29-я Линия, 2</span></p>
+										</span>
+										<span  class="show-map" data-default="Показать на карте"  data-open="Скрыть карту"></span>
+									</span>
+										<span class="mobile-map" 	data-coord='[-34.397, 150.644]' data-name='Саймый лучий ресторан лол' 
+													data-phone='+799999999, +799999999' 
+													data-metro="Невский проспект"  
+													data-adress="Большая конюшення 27"></span>
+									<span class="table-wrap">
+										<span class="cook-type">
+											<span class="table">
+												<span class="row">
+													<span class="cell item-1">
+														<span class="label">Кухня</span>
+														<span class="value">Итальянская</span>											
+													</span>
+													<span class="cell item-2">
+														<span class="label">Средний чек</span>
+														<span class="value">1500-2000 р.</span>
+													</span>
+												</span>
+												<span class="row">
+													<span class="cell item-3">
+														<span class="label">Режим работы</span>
+														<span class="value">08:00-23:00</span>
+													</span>
+													<span class="cell item-4">
+														<span class="label">Отзывов</span>
+														<span class="value">125</span>
+													</span>
+												</span>
+											</span>
+										</span>
+									</span>
+									</a><a href="#" class=" similar-item" >
+									<span class="text-wrap">
+										<span class="circle" data-counter="4.3">
+											<canvas class="countries" width="100" height="100" style="width: 100px; height: 100px;"></canvas>
+											<span class="rating-counter">4.3</span>
+										</span>
+										<span class="about">
+											<span class="title">Erarta Café</span>
+											<p><span>Ресторан-бар</span><span>В.О. 29-я Линия, 2</span></p>
+										</span>
+										<span  class="show-map" data-default="Показать на карте"  data-open="Скрыть карту"></span>
+									</span>
+										<span class="mobile-map" 	data-coord='[-34.397, 150.644]' data-name='Саймый лучий ресторан лол' 
+													data-phone='+799999999, +799999999' 
+													data-metro="Невский проспект"  
+													data-adress="Большая конюшення 27"></span>
+									<span class="table-wrap">
+										<span class="cook-type">
+											<span class="table">
+												<span class="row">
+													<span class="cell item-1">
+														<span class="label">Кухня</span>
+														<span class="value">Итальянская</span>											
+													</span>
+													<span class="cell item-2">
+														<span class="label">Средний чек</span>
+														<span class="value">1500-2000 р.</span>
+													</span>
+												</span>
+												<span class="row">
+													<span class="cell item-3">
+														<span class="label">Режим работы</span>
+														<span class="value">08:00-23:00</span>
+													</span>
+													<span class="cell item-4">
+														<span class="label">Отзывов</span>
+														<span class="value">125</span>
+													</span>
+												</span>
+											</span>
+										</span>
+									</span>
+									</a><a href="#" class=" similar-item" >
+									<span class="text-wrap">
+										<span class="circle" data-counter="4.3">
+											<canvas class="countries" width="100" height="100" style="width: 100px; height: 100px;"></canvas>
+											<span class="rating-counter">4.3</span>
+										</span>
+										<span class="about">
+											<span class="title">Erarta Café</span>
+											<p><span>Ресторан-бар</span><span>В.О. 29-я Линия, 2</span></p>
+										</span>
+										<span  class="show-map" data-default="Показать на карте"  data-open="Скрыть карту"></span>
+									</span>
+										<span class="mobile-map" 	data-coord='[-34.397, 150.644]' data-name='Саймый лучий ресторан лол' 
+													data-phone='+799999999, +799999999' 
+													data-metro="Невский проспект"  
+													data-adress="Большая конюшення 27"></span>
+									<span class="table-wrap">
+										<span class="cook-type">
+											<span class="table">
+												<span class="row">
+													<span class="cell item-1">
+														<span class="label">Кухня</span>
+														<span class="value">Итальянская</span>											
+													</span>
+													<span class="cell item-2">
+														<span class="label">Средний чек</span>
+														<span class="value">1500-2000 р.</span>
+													</span>
+												</span>
+												<span class="row">
+													<span class="cell item-3">
+														<span class="label">Режим работы</span>
+														<span class="value">08:00-23:00</span>
+													</span>
+													<span class="cell item-4">
+														<span class="label">Отзывов</span>
+														<span class="value">125</span>
+													</span>
+												</span>
+											</span>
+										</span>
+									</span>
+								</a>
+								<a href="#" class=" similar-item" >
+									<span class="text-wrap">
+										<span class="circle" data-counter="4.3">
+											<canvas class="countries" width="100" height="100" style="width: 100px; height: 100px;"></canvas>
+											<span class="rating-counter">4.3</span>
+										</span>
+										<span class="about">
+											<span class="title">Erarta Café</span>
+											<p><span>Ресторан-бар</span><span>В.О. 29-я Линия, 2</span></p>
+										</span>
+										<span  class="show-map" data-default="Показать на карте"  data-open="Скрыть карту"></span>
+									</span>
+										<span class="mobile-map" 	data-coord='[-34.397, 150.644]' data-name='Саймый лучий ресторан лол' 
+													data-phone='+799999999, +799999999' 
+													data-metro="Невский проспект"  
+													data-adress="Большая конюшення 27"></span>
+									<span class="table-wrap">
+										<span class="cook-type">
+											<span class="table">
+												<span class="row">
+													<span class="cell item-1">
+														<span class="label">Кухня</span>
+														<span class="value">Итальянская</span>											
+													</span>
+													<span class="cell item-2">
+														<span class="label">Средний чек</span>
+														<span class="value">1500-2000 р.</span>
+													</span>
+												</span>
+												<span class="row">
+													<span class="cell item-3">
+														<span class="label">Режим работы</span>
+														<span class="value">08:00-23:00</span>
+													</span>
+													<span class="cell item-4">
+														<span class="label">Отзывов</span>
+														<span class="value">125</span>
+													</span>
+												</span>
+											</span>
+										</span>
+									</span>
+								</a>
+								<a href="#" class=" similar-item" >
+									<span class="text-wrap">
+										<span class="circle" data-counter="4.3">
+											<canvas class="countries" width="100" height="100" style="width: 100px; height: 100px;"></canvas>
+											<span class="rating-counter">4.3</span>
+										</span>
+										<span class="about">
+											<span class="title">Erarta Café</span>
+											<p><span>Ресторан-бар</span><span>В.О. 29-я Линия, 2</span></p>
+										</span>
+										<span  class="show-map" data-default="Показать на карте"  data-open="Скрыть карту"></span>
+									</span>
+										<span class="mobile-map" 	data-coord='[-34.397, 150.644]' data-name='Саймый лучий ресторан лол' 
+													data-phone='+799999999, +799999999' 
+													data-metro="Невский проспект"  
+													data-adress="Большая конюшення 27"></span>
+									<span class="table-wrap">
+										<span class="cook-type">
+											<span class="table">
+												<span class="row">
+													<span class="cell item-1">
+														<span class="label">Кухня</span>
+														<span class="value">Итальянская</span>											
+													</span>
+													<span class="cell item-2">
+														<span class="label">Средний чек</span>
+														<span class="value">1500-2000 р.</span>
+													</span>
+												</span>
+												<span class="row">
+													<span class="cell item-3">
+														<span class="label">Режим работы</span>
+														<span class="value">08:00-23:00</span>
+													</span>
+													<span class="cell item-4">
+														<span class="label">Отзывов</span>
+														<span class="value">125</span>
+													</span>
+												</span>
+											</span>
+										</span>
+									</span>
+								</a>
+							</div>
+							<div class="btn-bottom"><a href="javascript:;" class="reviews-more">Показать еще</a></div>
+						</div>
+					</div>
+			</div>					
+		</section>
+<!-- Футер -->
+			<footer class="light">
+				<div class="content-width">
+
+					<div class="table">
+						<div class="row">
+							<div class="cell item-1">
+								<div class="download">
+									<p>Скачайте бесплатное мобильное приложение</p>
+									<a href="#" class="droid"></a>
+									<a href="#" class="apple"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cop">
+						<span>© 2014 Рестик.Ru</span>
+						<a href="#">Полная версия</a>
+					</div>
+				</div>
+			
+			</footer>
+	<!-- Футер -->
+
+
+		</div>
+
+
+	</body>
+</html>
+	

@@ -1,0 +1,180 @@
+<!doctype html>
+<html> 
+	<head> 
+		<title>Рестик</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <![endif]-->
+	    <meta name="viewport" content="width=device-width">
+		<link  type="text/css" rel="stylesheet" href="css/stylesheets/screen.css"  charset="utf-8">
+		<link  type="text/css" rel="stylesheet" href="css/stylesheets/mobile.css"  charset="utf-8">
+		<link  type="text/css" rel="stylesheet"  cssWatch="no"   href="css/animate.css"  charset="utf-8">
+		<link href="js/select2-3.5.2/select2.css"  cssWatch="no"  rel="stylesheet">
+		<link href="css/font-awesome.min.css"  cssWatch="no"  rel="stylesheet">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/swiper-slider/idangerous.swiper.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/bootstrap/css/bootstrap.min.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/pickmeup-datepicker/css/pickmeup.min.css">
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"> </script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"> </script>
+		<script src="js/swiper-slider/idangerous.swiper.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/select2-3.5.2/select2.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/bootstrap/js/bootstrap.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/chart.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/pickmeup-datepicker/js/jquery.pickmeup.min.js"></script>
+		<script src="js/jquery.mask.js"></script>
+ 		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script src="js/m_js.js"></script>
+
+		<!--[if lt IE 9]>
+			<script  type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+
+	<body class="mobile">
+		<nav>
+			<div class="nav-controls"><a class="toggle-menu" href="javascript:;"><i class="fa fa-times"></i></a></div>
+			<ul>
+				<li><a href="#"><i class="fa fa-search"></i><span>Найти ресторан</span></a></li>
+				<li><a href="#"><i class="fa fa-comment-o flip-horizontal"></i><span>Написать отзыв</span></a></li>
+				<li><a href="#"><i class="fa fa-tablet"></i><span>Получить iPad</span></a></li>
+				<li><a href="#"><i class="fa fa-star-o"></i><span>Топ ресторанов</span></a></li>
+			</ul>
+		</nav>
+				<header class="dark">
+				<div class="main-menu ib">
+					<a href="javascript:;">
+						<i class="fa fa-bars"></i>
+					</a>
+				</div>
+				<a href="/" class="logo  ib">
+					<img src="images/logo.png" alt="">
+				</a>
+				
+				<div class="fr ib">
+					<div class="change-city ib">
+						<a href="javascript:;" class="change-city-link">
+							<i class="fa fa-map-marker"></i>
+							<span></span>
+							<input type="hidden">
+						</a>
+						<div class="multiselect-wrap change-city-link-sel"  data-dropdown-css-class="search-block-drop search-content-block-drop" data-placeholder="Выберите тип кухни">
+							<a class="hidden" href="javascript:;">
+								<span>Выбрано</span>
+								<span> (</span><span class="multiselect-counter">0</span><span>)</span>
+								<span class="multiselect-arrow" role="presentation">
+									<b role="presentation"></b>
+								</span>
+							</a>
+							<!-- список чебоксов для выпадающего списка -->
+							<div class="drop ccities" style="display: none">
+								<div class="search">
+									<input type="text" placeholder="Найти город">
+									<i class="fa fa-search"></i>
+									<div class="ste"></div>
+								</div>
+								<ul>
+									<li>
+										<label class="checkbox">
+											<input value="21312" name="checkboxName"  type="radio">
+											<ins></ins>
+											<span>Москва</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox">
+											<input value="32131" checked="ture" name="checkboxName" type="radio">
+											<ins></ins>
+											<span>Санкт-Петербург</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox">
+											<input value="3423"  name="checkboxName" type="radio">
+											<ins></ins>
+											<span>Уфа</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox">
+											<input value="153" name="checkboxName"  type="radio">
+											<ins></ins>
+											<span>Самара</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox">
+											<input value="531" name="checkboxName"  type="radio">
+											<ins></ins>
+											<span>Екатеринбург</span>
+										</label>
+									</li>
+								</ul>
+								<a href="javascript:;" onclick="$('.search-content-block-drop').click();" class="grn-btn set-city	">Выбрать город</a>
+							</div>
+						</div>
+					</div>
+				</div>
+		</header>
+		<div class="body">
+		
+	<!-- в дата-атрибут  data-error-code пихаем код ошибки, например, как сделано - 404 -->
+		<section class="errrorpage"  data-error-code="404">
+			<!-- картинка заблуренная -->
+			<div class="img-main-bg blured" style="background-image: url(images/main-bg-blured.png)"></div>
+
+			<!-- кнтенер с контентом -->
+			<div class="main-container">
+				<div class="content-width ">
+
+					<!-- заголовок -->
+					<div class="table">
+						<div class=" row">
+							<div class="cell">
+								<i></i>
+								<div>
+									<span class="title">
+										<span class="counter"></span>
+										<span class="name"> ошибка</span>
+									</span>
+									<p>Запрашиваемая вами страница не найдена.</p>
+									<a href="/">Перейти на главную страницу</a>
+								</div>							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			</section>	
+<!-- Футер -->
+			<footer class="light">
+				<div class="content-width">
+
+					<div class="table">
+						<div class="row">
+							<div class="cell item-1">
+								<div class="download">
+									<p>Скачайте бесплатное мобильное приложение</p>
+									<a href="#" class="droid"></a>
+									<a href="#" class="apple"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cop">
+						<span>© 2014 Рестик.Ru</span>
+						<a href="#">Полная версия</a>
+					</div>
+				</div>
+			
+			</footer>
+	<!-- Футер -->
+
+
+		</div>
+	
+</html>
+	

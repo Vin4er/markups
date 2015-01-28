@@ -1,0 +1,556 @@
+<!doctype html>
+<html> 
+	<head> 
+		<title>Рестик</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <![endif]-->
+		<link  type="text/css" rel="stylesheet" href="css/stylesheets/screen.css"  charset="utf-8">
+		<link  type="text/css" rel="stylesheet"  cssWatch="no"   href="css/animate.css"  charset="utf-8">
+		<link href="js/select2-3.5.2/select2.css"  cssWatch="no"  rel="stylesheet">
+		<link href="css/font-awesome.min.css"  cssWatch="no"  rel="stylesheet">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/swiper-slider/idangerous.swiper.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/bootstrap/css/bootstrap.min.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/pickmeup-datepicker/css/pickmeup.min.css">
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"> </script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"> </script>
+		<script src="js/swiper-slider/idangerous.swiper.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/select2-3.5.2/select2.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/bootstrap/js/bootstrap.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/chart.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/pickmeup-datepicker/js/jquery.pickmeup.min.js"></script>
+		<script src="js/jquery.mask.js"></script>
+ 		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript" src="js/js.js">	</script>
+		<!--[if lt IE 9]>
+			<script  type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+
+	<body>
+		<nav>
+			<div class="nav-controls"><a class="toggle-menu" href="javascript:;"><i class="fa fa-times"></i></a></div>
+			<ul>
+				<li><a href="#"><i class="fa fa-search"></i><span>Найти ресторан</span></a></li>
+				<li><a href="#"><i class="fa fa-comment-o flip-horizontal"></i><span>Написать отзыв</span></a></li>
+				<li><a href="#"><i class="fa fa-tablet"></i><span>Получить iPad</span></a></li>
+				<li><a href="#"><i class="fa fa-star-o"></i><span>Топ ресторанов</span></a></li>
+			</ul>
+		</nav>
+		<header class="dark">
+			<a href="/" class="logo fl ib">
+				<img src="images/logo.png" alt="">
+			</a>
+			<div class="auth-block">
+				 <!-- БЛОК С ВХОДОМ СЕРЕЗ СОЦИАЛКУ -->
+				<div class="social">
+					<span>Войди через</span>
+					<a class="vk" href="#"><i></i></a>
+					<a class="fb" href="#"><i></i></a>
+					<a class="tw" href="#"><i></i></a>
+				</div>  
+				<!--  БЛОК С АВТОРИЗИРОВАННЫМ ПОЛЬЗОВАТЕЛЕМ
+				<div class="user">
+					<a href="#">
+						<div class="img"  style="background-image: url(http://cs312219.vk.me/v312219157/104e/K3RT39tOSnE.jpg)"></div>
+						<div class="username">Николай Валуев</div>
+					</a>
+					<a href="#" class="logout">Выйти</a>
+				</div> 
+				-->
+			</div>
+			<div class="fr ib">
+				<div class="change-city ib">
+					<a href="javascript:;" class="change-city-link">
+						<i class="fa fa-map-marker"></i>
+						<span>Санкт-Петербург</span>
+					</a>
+				</div>
+
+				<div class="search-header ib">
+					<form action="/" method="POST" id="header-search">
+						<input type="text">
+						<button><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+
+				<div class="main-menu ib">
+					<a href="javascript:;">
+						<i class="fa fa-bars"></i>
+						<span>Меню</span>
+					</a>
+				</div>
+			</div>
+		</header>
+		<div class="body">
+
+
+		
+	
+		<section class="">
+			<!-- картинка заблуренная -->
+
+			<!-- Для дестораторов -->
+			<div class="about-main-block new">
+				<div class="content-width">
+					<div class="biglgo"><img src="images/logo-big.png" alt="" title="RestAdvisor"></div>
+					<p>  RestAdvisor – это самый объективный и точный рейтинг ресторанов, кафе и баров Петербурга	и Москвы. Он сформирован роботом на основе многочисленных отзывов из интернета.</p>
+				</div>
+				<div class="theydatabase">
+							<div class="content-width">
+								<div class="table">
+									<div class="row">
+										<a href="#" class="cell item-1">
+											<div class="cellwrapper">
+												<i></i>
+												<div class="text">
+													<div class="title">Первый </div>
+													<div class="label">народный рейтинг</div>
+												</div>													
+											</div>
+										</a>
+										<a href="#" class="cell item-2">
+											<div class="cellwrapper">
+												<i></i>
+												<div class="text">
+													<div class="title">9567 </div>
+													<div class="label">ресторанов </div>
+												</div>
+											</div>
+										</a>
+										<a href="#" class="cell item-3 comments" data-toggle="modal" data-target="#source" href="#source">
+											<div class="cellwrapper">
+												<i></i>
+												<div class="text">
+													<div class="title">184720 </div>
+													<div class="label">отзывов </div>
+												</div>
+											</div>
+										</a>
+										<a href="#" class="cell item-4">
+											<div class="cellwrapper">
+												<i></i>
+												<div class="text">
+													<div class="title">1 клик</div>
+													<div class="label">для бронирования</div>
+												</div>
+											</div>
+										</a>
+										<a href="#" class="cell item-5">
+											<div class="cellwrapper">
+												<i></i>
+												<div class="text">
+													<div class="title">Критики</div>
+													<div class="label">для экспертной оценки</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+				</div>
+				
+
+			</div>
+			<div class="intelect"></div>
+			<div class="funny"></div>
+
+			<div class="big-big-block">
+				
+				<div class="img-left animate-scroll coffe">
+					<div  class="content-width">
+					<span class="img">
+						<span class="ri"><img src="images/coffe.png" alt=""><div class="circle" data-counter="4.5">
+							<canvas class="countries" width="100" height="100" style="width: 100px; height: 100px;"></canvas>
+							<span class="rating-counter"></span>
+						</div></span>
+						
+					</span>
+						<h4>Ни один сайт в отдельности не обладает такой базой отзывов!  </h4>
+						<p>
+							Мы решили отказаться от человеческого фактора при оценке комментариев о заведениях общественного питания, которые оставляют посетители ресторанов на разных сайтах. Наш искусственный интеллект распознает смысловую нагрузку, интонацию и смысл отзывов, а затем оценивает их. <br>  <br> Таким образом, мы получаем среднее арифметическое всех существующих мнений. Над этим уникальным алгоритмом трудились лучшие умы кафедры математической лингвистики СПБГУ. <span><img src="images/last-simbol.png" alt=""></span>
+						</p>						
+					</div>	
+				</div>	
+				<div class="img-right animate-scroll left  cups">
+					<div  class="content-width">
+					<span class="img"></span>
+						<h4>Чем больше отзывов о ресторанах, тем точнее оценка</h4>
+						<p>
+							Рейтинг RestAdviser является самым точным, потому что мы не договариваемся с ресторанами о том, какие отзывы учитывать, а какие нет. 
+						 <br>  <br> 
+						Наш робот ежедневно мониторит сайты и собирает ВСЕ имеющиеся отзывы о заведениях. На сегодняшний день их больше 200 000, эта цифра ежедневно растет! 
+						</p>						
+					</div>
+				</div>
+
+				<div class="img-left  animate-scroll  control-zacup">
+					<div  class="content-width">
+						<span class="img"></span>
+						<h4>Экспертное мнение в качестве «контрольной закупки»</h4>
+						<p>
+							Помимо точных математических формул и цифр у нас есть три ресторанных критика, которые делятся своим мнением вне рейтинга. По просьбе пользователей сайта они могут посетить любой ресторан и написать о нем.
+							 <br>  <br> 
+							 Профессионалы не дают советов, не занимаются подбором ресторанов – нам интересно, что они думают о том или ином месте.
+						</p>						
+					</div>	
+				</div>	
+
+
+				<div class="img-right  animate-scroll left buggete">
+					<div  class="content-width">
+						<span class="img"></span>
+						<h4>Бронируйте столики в любимом ресторане </h4>
+						<p>
+							RestAdviser – это так же система бронирования. С помощью удобного приложения можно легко зарезервировать столик в ресторане. Выберите место, дату и время, введите необходимые параметры, система покажет вам свободные места. Остается сделать один клик – и вас будут ждать.
+						</p>						
+					</div>
+				</div>
+
+			</div>
+		
+		</section>	
+<!-- Футер -->
+		<footer class="dark">
+			<div  class="content-width">
+
+				<div class="table">
+					<div class="row">
+						<div class="cell item-1">
+							<div class="download">
+								<p>Скачайте бесплатное мобильное приложение</p>
+								<a href="#" class="droid"></a>
+								<a href="#" class="apple"></a>
+							</div>
+							<div class="copyright">© 2014 Рестик.Ru</div>
+						</div>
+						<div class="cell item-2">
+							<ul>
+								<li><a href="">О компании</a></li>
+								<li><a href="">Вакансии</a></li>
+								<li><a href="">Пресса о нас</a></li>
+							</ul>
+							<ul>
+								<li><a href="">Условия и конфиденциальность</a></li>
+								<li><a href="">Помощь</a></li>
+								<li><a href="">Правила</a></li>
+							</ul>
+						</div>
+						<div class="cell item-3">
+							<div class="join">
+								<div>Присоединяйтесь</div>			
+								<div>
+									<a class="vk"   href="#"><i></i></a>
+									<a class="fb"   href="#"><i></i></a>
+									<a class="inst" href="#"><i></i></a>
+								</div>					
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		</footer>
+<!-- Футер -->
+
+
+	
+	</div>
+
+		<!-- Модпльные окна -->
+	<div class="modal-wrapper">
+		<!-- Окно с выбором города 
+				class="set" - означает что этот город активный
+				все отрабатывает метод  window.changecities()
+		 -->
+			<div id="changecities" class="changecities">
+				<ul>
+					<li><a href="#" class="set">Санкт-Петербург</a></li>
+					<li><a href="#" >Новый город</a></li>
+					<li><a data-comingsoon="Скоро" data-toggle="modal" data-target="#site_is_dev" href="#site_is_dev">Москва</a></li>
+				</ul>
+			</div>
+
+
+
+		<!-- Сайт в разработке -->
+			<div class="modal-wrapper modal fade" id="site_is_dev" tabindex="-1" role="dialog" aria-labelledby="site_is_dev" aria-hidden="false">
+		  		<div class="modal-dialog">
+				    <div class="modal-content">
+		  				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		  				<div class="wrap">
+					    	<h2>Сайт находится в разработке</h2>
+					    	<p>Приезжайте кушать в Петербург</p>
+		  				</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- Thx -->
+			<div class="modal-wrapper modal fade" id="thx" tabindex="-1" role="dialog" aria-labelledby="thx" aria-hidden="true">
+		  		<div class="modal-dialog">
+				    <div class="modal-content">
+		  				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		  				<div class="wrap">
+					    	<h2>Стасибо</h2>
+					    	<p>Мы с вами свяжемся</p>
+		  				</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- Подкл ресторан -->
+			<div class="modal-wrapper modal fade" id="hook-up" tabindex="-1" role="dialog" aria-labelledby="hook-up" aria-hidden="false" >
+				<div class="modal-dialog">
+				    <div class="modal-content">  
+		  				<button type="button" class="close" data-dismiss="modal"></button>
+		  				<div class="wrap">
+		  					<div class="header">Подключить мой ресторан</div>
+		  					<div class="mbody">
+		  						<form action="">
+		  							<div class="wrap-input">
+		  								<div class="title"><i class="fa fa-user"></i>Имя</div>
+		  								<input type="text" placeholder="Введите свое имя">
+		  							</div>
+		  							<div class="wrap-input">
+		  								<div class="title"><i class="fa fa-cutlery"></i>Название ресторана</div>
+		  								<input type="text" placeholder="Введите название ресторана">
+		  							</div>
+		  							<div class="wrap-input">
+		  								<div class="title"><i class="fa mail">@</i>E-mail</div>
+		  								<input type="text" placeholder="Введите свой адрес электронной почты">
+		  							</div>
+		  							<div class="wrap-input">
+		  								<div class="title"><i class="fa fa-phone"></i>Телефон</div>    
+		  								<input type="text" class="phone" placeholder="Введите свой телефон">
+		  							</div>
+		  							
+		  							<div class="wrap-textarea">
+		  								<div class="title"><i class="fa fa-comment"></i>Комментарий</div>    
+		  								<textarea placeholder="Введите свой комментарий"></textarea>
+		  							</div>
+	  								<div class="grd-btn ">
+										<div class="wrp animated"></div>
+										<input type="button" class="grn-btn" data-toggle="modal"  data-target="#thx" href="#thx"  value="Забронировать столик">
+									</div>
+		  						</form>
+		  					</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- ИСТОЧНИКИ -->
+			<div  class="modal-wrapper modal fade" id="source" tabindex="-1" role="dialog" aria-labelledby="source" aria-hidden="false" >
+				<div class="modal-dialog">
+				    <div class="modal-content">
+		  				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		  				<div class="wrap">
+		  					<h2>Источники RestAdvisor</h2>
+		  					<p>
+		  						И даже сейчас Роботизированный алгоритм Рестика читает новые отзывы, которые Вы оставили на специализированных сайтах и сервисах — для того, чтобы впервые отразить динамику изменения Ваших мнений к ресторанам! 
+		  					</p>
+		  					<div class="sources-items table">
+		  						<div class="row">
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1222222</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  						</div>
+
+		  						<div class="row">
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  						</div>
+
+		  						<div class="row">
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  						</div>
+		  					</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- БРОНЬ -->
+			<div class="modal-wrapper modal fade" id="reservation" tabindex="-1" role="dialog" aria-labelledby="reservation" aria-hidden="false" >
+				<div class="modal-dialog">
+				    <div class="modal-content">
+		  				<button type="button" class="close" data-dismiss="modal"></button>
+		  				<div class="wrap">
+		  					<div class="header">Бронирование столика в ресторане</div>
+		  					<div class="mbody">
+		  						<form action="">
+			  						<div class="w50">
+			  							<div class="type"><i class="fa fa-cutlery"></i>Ресторан</div>
+			  							<div class="name">
+			  								<div class="title">«Большая кухня»</div>
+			  								<p>Лиговский пр-т, д. 30а, ТРЦ «Галерея», 5 этаж</p>
+			  							</div>
+			  							<div class="date-choose">
+			  								<div class="title">Выберите дату</div>
+			  								<div class="calendar"></div>
+			  								<div class="choosendatevalue"><input type="hidden"><span class="value"></span></div>
+			  							</div>
+			  						</div>
+			  						<div class="w50">
+			  							<div class="wrap-input">
+			  								<div class="title"><i class="fa fa-user"></i>Имя</div>
+			  								<input type="text" placeholder="Введите свое имя">
+			  							</div>
+			  							<div class="wrap-input">
+			  								<div class="title"><i class="fa fa-phone"></i>Телефон</div>    
+			  								<input type="text" class="phone" placeholder="Введите свой телефон">
+			  							</div>
+			  							<div class="wraperx2">
+			  								<div class="wrap-input">
+			  									<div class="title"><i class="fa fa-clock-o"></i>Время</div>
+			  									<input type="text" class="time" placeholder="Время">
+			  								</div>
+			  								<div class="wrap-input">
+			  									<div class="title"><i class="fa fa-users"></i>Количество гостей</div>
+			  									<input type="text" class="count" placeholder="Количество гостей">
+			  								</div>
+			  							</div>
+			  							<div class="wrap-textarea">
+			  								<div class="title"><i class="fa fa-comment"></i>Комментарий</div>    
+			  								<textarea placeholder="Введите свой комментарий"></textarea>
+			  							</div>
+		  								<div class="grd-btn ">
+											<div class="wrp animated"></div>
+											<input type="button" class="grn-btn" value="Забронировать столик">
+										</div>
+			  						</div>
+		  						</form>
+		  					</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	<!-- / Модальные окна -->
+	</body>
+</html>
+	

@@ -1,0 +1,813 @@
+<!doctype html>
+<html> 
+	<head> 
+		<title>Рестик</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <![endif]-->
+		<link  type="text/css" rel="stylesheet" href="css/stylesheets/screen.css"  charset="utf-8">
+		<link  type="text/css" rel="stylesheet"  cssWatch="no"   href="css/animate.css"  charset="utf-8">
+		<link href="js/select2-3.5.2/select2.css"  cssWatch="no"  rel="stylesheet">
+		<link href="css/font-awesome.min.css"  cssWatch="no"  rel="stylesheet">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/swiper-slider/idangerous.swiper.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/bootstrap/css/bootstrap.min.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/pickmeup-datepicker/css/pickmeup.min.css">
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"> </script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"> </script>
+		<script src="js/swiper-slider/idangerous.swiper.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/select2-3.5.2/select2.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/bootstrap/js/bootstrap.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/chart.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/pickmeup-datepicker/js/jquery.pickmeup.min.js"></script>
+		<script src="js/jquery.mask.js"></script>
+ 		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript" src="js/js.js">	</script>
+		<!--[if lt IE 9]>
+			<script  type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<nav>
+			<div class="nav-controls"><a class="toggle-menu" href="javascript:;"><i class="fa fa-times"></i></a></div>
+			<ul>
+				<li><a href="#"><i class="fa fa-search"></i><span>Найти ресторан</span></a></li>
+				<li><a href="#"><i class="fa fa-comment-o flip-horizontal"></i><span>Написать отзыв</span></a></li>
+				<li><a href="#"><i class="fa fa-tablet"></i><span>Получить iPad</span></a></li>
+				<li><a href="#"><i class="fa fa-star-o"></i><span>Топ ресторанов</span></a></li>
+			</ul>
+		</nav>
+		<header class="light">
+				<a href="/" class="logo fl ib">
+					<img src="images/logo.png" alt="">
+				</a>
+				<div class="auth-block">
+					 <!-- БЛОК С ВХОДОМ СЕРЕЗ СОЦИАЛКУ -->
+					<!-- <div class="social">
+						<span>Войди через</span>
+						<a class="vk" href="#"><i></i></a>
+						<a class="fb" href="#"><i></i></a>
+						<a class="tw" href="#"><i></i></a>
+					</div>   -->
+					<!--  БЛОК С АВТОРИЗИРОВАННЫМ ПОЛЬЗОВАТЕЛЕМ-->
+					<div class="user">
+						<a href="#">
+							<div class="img"  style="background-image: url(http://cs312219.vk.me/v312219157/104e/K3RT39tOSnE.jpg)"></div>
+							<div class="username">Николай Валуев</div>
+						</a>
+						<a href="#" class="logout">Выйти</a>
+					</div> 
+					
+				</div>
+				<div class="fr ib">
+					<div class="change-city ib">
+						<a href="javascript:;" class="change-city-link">
+							<i class="fa fa-map-marker"></i>
+							<span></span>
+							<input type="hidden">
+						</a>
+					</div>
+
+					<div class="search-header ib">
+						<form action="/" method="POST" id="header-search">
+							<input type="text">
+							<button><i class="fa fa-search"></i></button>
+						</form>
+					</div>
+
+					<div class="main-menu ib">
+						<a href="javascript:;">
+							<i class="fa fa-bars"></i>
+							<span>Меню</span>
+						</a>
+					</div>
+				</div>
+			</header>
+		<div class="body">
+			<section class="index">
+				<!-- картинка заблуренная -->
+				<!-- <div class="img-main-bg blured" ></div> -->
+
+				<!-- заголовочный блок -->
+				<div class="main-container "  style="background-image: url(images/main-bg.png)">
+					<div class="main-z-index">
+						<!-- заголовок -->
+						<div class="main-title" >
+							
+							<div class="title">
+								<h1>Народный рейтинг ресторанов</h1>
+							</div>
+							<div class="search-block">
+								<div class="tab-toggler ">
+									<div class="tab-headers">
+										<span class="label">Найти ресторан:</span>
+									</div>
+									<form action="">
+										<div class="form-wrapper table">
+											<div class="row">
+												<div class="cell">
+													<div class="wrap-select">
+														<select name="" id="" class="placeholder" data-dropdown-css-class="search-block-drop" data-allow-clear="true" data-placeholder="Выберите район или метро">
+															<option value=""></option>
+															<optgroup label="Районы">
+																<option value="r1">Петродворцовый</option>
+																<option value="r2">Красносельский</option>
+																<option value="r3">Московский</option>
+																<option value="r3">Ленинский</option>
+																<option value="r3">Дворцовый</option>
+																<option value="r3">Петроградски</option>
+															</optgroup>
+															<optgroup label="Метро">
+																<option value="m1">Автово</option>
+																<option value="m2">Ленинский проспект</option>
+																<option value="m3">Московская</option>
+																<option value="m3">Кировский завод</option>
+																<option value="m3">Купчино</option>
+															</optgroup>
+														</select>
+													</div>
+												</div>
+												<div class=" cell check-toggler">
+													<div class="table">
+														<div class="row">
+															<div class="cell"><label><input type="checkbox"><span>дёшево</span></label></div>
+															<div class="cell"><label><input type="checkbox"><span>демократично</span></label></div>
+															<div class="cell"><label><input type="checkbox"><span>дорого</span></label></div>
+														</div>
+													</div>
+												</div>
+												<div class="cell">
+													<div class=" btn-search fr">
+														<input type="submit" class="grn-btn" value="ПОИСК">
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="restorant-pseudo-map content-width">
+								<!-- Сюда вставляем сегенерированные блоки -->
+
+<div class="restorant-pseudo-map content-width">
+								<!-- Сюда вставляем сегенерированные блоки -->
+																								<a href="/restoran/page/7053" class="ui-draggable animated bounceInLeft item-2" style="position: relative; left: 756px; top: 218px; min-width: 123px;">
+									<div class="title">
+										<i></i>
+										<span class="brdrd">
+											<span class="label">12 Комнат</span>
+										</span>								
+									</div>
+									<div class="info">
+										<div class="circle" data-counter="4.1">
+											<canvas class="countries" width="100" height="100" style="width: 100px; height: 100px;"></canvas>
+											<span class="rating-counter">4.1</span>
+										</div>
+										<div class="list">
+											<div class="item-1"><i></i><span>фаст-фуд</span></div>
+											<div class="item-2"><i></i><span>500р.</span></div>
+											<div class="item-3"><i></i><span>n/a—n/a</span></div>
+										</div>
+									</div>
+								</a>
+																<a href="/restoran/page/4313" class="ui-draggable animated fadeInLeft item-3" style="position: relative; left: 559px; top: 138px; min-width: 110px;">
+									<div class="title">
+										<i></i>
+										<span class="brdrd">
+											<span class="label">Бахрома</span>
+										</span>								
+									</div>
+									<div class="info">
+										<div class="circle" data-counter="4.0">
+											<canvas class="countries" width="100" height="100" style="width: 100px; height: 100px;"></canvas>
+											<span class="rating-counter">0</span>
+										</div>
+										<div class="list">
+											<div class="item-1"><i></i><span>восточная</span></div>
+											<div class="item-2"><i></i><span>900р.</span></div>
+											<div class="item-3"><i></i><span>12:00—03:00</span></div>
+										</div>
+									</div>
+								</a>
+																<a href="/restoran/page/1826" class="ui-draggable animated bounceInUp item-6" style="position: relative; left: 385px; top: 198px; min-width: 160px;">
+									<div class="title">
+										<i></i>
+										<span class="brdrd">
+											<span class="label">Квартира №147</span>
+										</span>								
+									</div>
+									<div class="info">
+										<div class="circle" data-counter="4.3">
+											<canvas class="countries" width="100%" height="100%"></canvas>
+											<span class="rating-counter">0</span>
+										</div>
+										<div class="list">
+											<div class="item-1"><i></i><span>европейская</span></div>
+											<div class="item-2"><i></i><span>800р.</span></div>
+											<div class="item-3"><i></i><span>09:00—06:00</span></div>
+										</div>
+									</div>
+								</a>
+																<a href="/restoran/page/1026" class="ui-draggable animated flipInY item-5" style="position: relative; left: 75px; top: 98px; min-width: 98px;">
+									<div class="title">
+										<i></i>
+										<span class="brdrd">
+											<span class="label">Ферма</span>
+										</span>								
+									</div>
+									<div class="info">
+										<div class="circle" data-counter="4.2">
+											<canvas class="countries" width="100%" height="100%"></canvas>
+											<span class="rating-counter">0</span>
+										</div>
+										<div class="list">
+											<div class="item-1"><i></i><span>европейская</span></div>
+											<div class="item-2"><i></i><span>1500р.</span></div>
+											<div class="item-3"><i></i><span>11:00—00:00</span></div>
+										</div>
+									</div>
+								</a>
+																<a href="/restoran/page/1736" class="ui-draggable animated fadeInLeft item-5" style="position: relative; left: 0px; top: 198px; min-width: 115px;">
+									<div class="title">
+										<i></i>
+										<span class="brdrd">
+											<span class="label">Бергамот</span>
+										</span>								
+									</div>
+									<div class="info">
+										<div class="circle" data-counter="4.7">
+											<canvas class="countries" width="100%" height="100%"></canvas>
+											<span class="rating-counter">0</span>
+										</div>
+										<div class="list">
+											<div class="item-1"><i></i><span>европейская</span></div>
+											<div class="item-2"><i></i><span>900р.</span></div>
+											<div class="item-3"><i></i><span>12:00—23:00</span></div>
+										</div>
+									</div>
+								</a>
+								
+
+							</div>
+								
+
+
+							</div>
+							
+							<div class="theydatabase">
+								<div class="content-width">
+									<div class="table">
+										<div class="row">
+											<a href="#" class="cell item-1">
+												<div class="cellwrapper">
+													<i></i>
+													<div class="text">
+														<div class="title">Первый </div>
+														<div class="label">народный рейтинг</div>
+													</div>													
+												</div>
+											</a>
+											<a href="#" class="cell item-2">
+												<div class="cellwrapper">
+													<i></i>
+													<div class="text">
+														<div class="title">9567 </div>
+														<div class="label">ресторанов </div>
+													</div>
+												</div>
+											</a>
+											<a  data-toggle="modal" data-target="#source" href="#source" class="cell item-3 comments">
+												<div class="cellwrapper">
+													<i></i>
+													<div class="text">
+														<div class="title">184720 </div>
+														<div class="label">отзывов </div>
+													</div>
+												</div>
+											</a>
+											<a href="#" class="cell item-4">
+												<div class="cellwrapper">
+													<i></i>
+													<div class="text">
+														<div class="title">1 клик</div>
+														<div class="label">для бронирования</div>
+													</div>
+												</div>
+											</a>
+											<a href="#" class="cell item-5">
+												<div class="cellwrapper">
+													<i></i>
+													<div class="text">
+														<div class="title">Критики</div>
+														<div class="label">для экспертной оценки</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+
+				<!-- Бронирование -->
+				<div class="reservation left presentation-blocks animate-scroll">
+					<div class="content-width">
+						<i class="bg-img"></i>
+						<div class="fr">
+						<h2>Бронирование в 1 клик</h2>
+						<p>
+							<span>Выберите и забронируйте ваш любимый стол! Без посредников, только прямая онлайн связь с рестораном. Выбор стола онлайн! </span>
+						</p>
+						<div class="form">
+							<form action="/" method="POST">
+								<div class="search-reservation search-select" >
+									<!-- 
+										Юзается select2 . поддержка подгрузки результатов ajax
+										http://ivaynberg.github.io/select2/ 
+										==============
+										либо аяксом - апи плагина позволяет. когда будет апи для получения списка - могу сам сделать подгрзку;
+										либо весь список грузим в дата атрибут и вообще не ебем мозг, как сделано сейчас
+										==============
+										data-data-array = [
+											id:     ID ресторана,
+											name:   название ресторана
+											rating: рейтинг  ресторана
+										];
+									-->
+									<input class="select" type="hidden" name=""  
+										data-data-array='[{"id": "0", "text": "story", "rating":"3.2"}, {"id": "1", "text": "Стриптизбар", "rating":"2"}, {"id": "3", "text": "Бахрома", "rating":"2"}, {"id": "2", "text": "Кайот", "rating":"4.2"}]'  
+										data-dropdown-css-class="search-block-drop typehead" 
+										data-placeholder="Начните вводить название ресторана..">
+								</div>
+								<div class="grd-btn">
+									<div class="wrp animated"></div>
+									<div class="txt"><input type="submit" value="Найти и Забронировать ресторан"></div>
+								</div>
+							</form>
+						</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Оценить -->
+				<div class="likeit2 right presentation-blocks animate-scroll">
+					<div class="content-width">
+						<!-- <i class="bg-img"></i> -->
+						<!-- <div class="fr"> -->
+						<div class="bgg">
+							<h2>Вкусно поели? Не молчите - расскажите
+							<p><span>«Рестик» это первая система искусственного интеллекта которая понимает ваш отзыв.</span> <a href="#">Подробнее</a></p>
+							</h2>
+							<form action="/" method="post">
+								<div class="add-review">
+									<div class="wrap-input search-select">
+									<!-- 
+											Юзается select2 . поддержка подгрузки результатов ajax
+											http://ivaynberg.github.io/select2/ 
+											==============
+											либо аяксом - апи плагина позволяет. когда будет апи для получения списка - могу сам сделать подгрзку;
+											либо весь список грузим в дата атрибут и вообще не ебем мозг, как сделано сейчас
+											==============
+											data-data-array = [
+												id:     ID ресторана,
+												name:   название ресторана
+												rating: рейтинг  ресторана
+											];
+										-->
+										<input class="select" type="hidden" name=""  
+											data-data-array='[{"id": "0", "text": "story", "rating":"3.2"}, {"id": "1", "text": "Стриптизбар", "rating":"2"}, {"id": "3", "text": "Бахрома", "rating":"2"}, {"id": "2", "text": "Кайот", "rating":"4.2"}]'  
+											data-dropdown-css-class="search-block-drop typehead" 
+											data-placeholder="Начните вводить название ресторана..">
+									</div>
+									<div class="wrap-textarea">
+										<textarea   name="" id=""  placeholder="Введите отзыв.."></textarea>
+									</div>
+									<div class="bot">
+										<!-- 
+										СОбытие на отправку ормы инициалиируется в методе window.sendReview(); 
+										там же организован пересчет круговой диаграммы -->
+										<div class="liker">
+											<div class="new-review">
+												<p><i></i>оценка вашего отзва</p>
+												<div class="circle"  data-counter="1.9">
+													<canvas class="countries" width="100%" height="100%"></canvas>
+													<span class="rating-counter">0</span>
+												</div>
+											</div>
+											<div class="grd-btn ">
+												<div class="wrp animated"></div>
+												<input type="button" class="grn-btn" value="Оставить отзыв">
+											</div>
+										</div>
+									</div>
+								</div>		
+
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<!-- Экспертная оценка -->
+				<div class="expert right presentation-blocks animate-scroll">
+					<div class="content-width">
+						<div class="fr">
+						<i class="bg-img"></i>
+						<h2>Независимая экспертная оценка</h2>
+						<p><span>Мы работаем с тремя профессиональными критиками, которых по голосованию пользователей можно отправить в любой ресторан для того, что бы они отразили свое мнение о заведении.</span></p>
+						<a  href="#" class="grd-btn">
+							<div class="wrp animated"></div>
+							<div class="txt"><span>Подробнее об экспертах</span></div>
+						</a>
+					</div>
+					</div>
+				</div>
+
+
+				<!-- Для дестораторов -->
+				<div class="destorators">
+					<div class="content-width">
+						<h2><span class="h2-liner">Для рестораторов</span></h2>
+						<p>Начните получать бесплатных гостей прямо сейчас </p>
+						<div class="table">
+							<div class="row">
+								<div class="cell item-1">
+									<div>
+										<i></i>
+										<div class=" text">
+											<div class="title">Для хостес</div>
+											<div class="label">Карта рассадки гостей за 5 минут! Книга бронирования удобней, чем тетрадка - вы наглядно распределяете гостей по столам!</div>
+										</div>
+									</div>
+								</div>
+								<div class="cell item-2">
+									<div>
+										<i></i>
+										<div class="div text">
+											<div class="title">Для управляющего</div>
+											<div class="label">Полная статистика посещения ресторана, время пребывания и т.д.</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bg-img">
+						<div class="content-width">
+							<h2>Получите iPad в подарок</h2>
+							<p>
+								Подключитесь к безпосредниковой системе бронирования столов 
+								и получили iPad с установленной системой менеджмента гостей 
+								«NameRes» ресторана <b>бесплатно!</b>
+							</p>
+			
+							<a  data-toggle="modal" data-target="#hook-up" href="#hook-up"  class="grd-btn">
+								<div class="wrp animated"></div>
+							<div class="txt"><span>Подключить мой ресторан</span></div>
+						</a>
+						</div>
+					</div>
+				</div>
+			</section>	
+	<!-- Футер -->
+			<footer class="light">
+				<div class="content-width">
+
+					<div class="table">
+						<div class="row">
+							<div class="cell item-1">
+								<div class="download">
+									<p>Скачайте бесплатное мобильное приложение</p>
+									<a href="#" class="droid"></a>
+									<a href="#" class="apple"></a>
+								</div>
+							</div>
+							<div class="cell item-2">
+								<p>Возможности для ресторанов</p>
+								<ul>
+									<li><i class="fa fa-check-circle"></i>Свое приложение приема и управления заявками на бронирование</li>
+									<li><i class="fa fa-check-circle"></i>Прямые заявки с сайта</li>
+									<li><i class="fa fa-check-circle"></i>Увеличение количества посетителей</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+	<!-- Футер -->
+
+
+		</div>
+	<!-- Модпльные окна -->
+	<div class="modal-wrapper">
+		<!-- Окно с выбором города 
+				class="set" - означает что этот город активный
+				все отрабатывает метод  window.changecities()
+		 -->
+			<div id="changecities" class="changecities">
+				<ul>
+					<li><a href="#" class="set">Санкт-Петербург</a></li>
+					<li><a href="#" >Новый город</a></li>
+					<li><a data-comingsoon="Скоро" data-toggle="modal" data-target="#site_is_dev" href="#site_is_dev">Москва</a></li>
+				</ul>
+			</div>
+
+		<!-- Сайт в разработке -->
+			<div class="modal-wrapper modal fade" id="site_is_dev" tabindex="-1" role="dialog" aria-labelledby="site_is_dev" aria-hidden="false">
+		  		<div class="modal-dialog">
+				    <div class="modal-content">
+		  				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		  				<div class="wrap">
+					    	<h2>Сайт находится в разработке</h2>
+					    	<p>Приезжайте кушать в Петербург</p>
+		  				</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- Thx -->
+			<div class="modal-wrapper modal fade" id="thx" tabindex="-1" role="dialog" aria-labelledby="thx" aria-hidden="true">
+		  		<div class="modal-dialog">
+				    <div class="modal-content">
+		  				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		  				<div class="wrap">
+					    	<h2>Стасибо</h2>
+					    	<p>Мы с вами свяжемся</p>
+		  				</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- Подкл ресторан -->
+			<div class="modal-wrapper modal fade" id="hook-up" tabindex="-1" role="dialog" aria-labelledby="hook-up" aria-hidden="false" >
+				<div class="modal-dialog">
+				    <div class="modal-content">  
+		  				<button type="button" class="close" data-dismiss="modal"></button>
+		  				<div class="wrap">
+		  					<div class="header">Подключить мой ресторан</div>
+		  					<div class="mbody">
+		  						<form action="">
+		  							<div class="wrap-input">
+		  								<div class="title"><i class="fa fa-user"></i>Имя</div>
+		  								<input type="text" placeholder="Введите свое имя">
+		  							</div>
+		  							<div class="wrap-input">
+		  								<div class="title"><i class="fa fa-cutlery"></i>Название ресторана</div>
+		  								<input type="text" placeholder="Введите название ресторана">
+		  							</div>
+		  							<div class="wrap-input">
+		  								<div class="title"><i class="fa mail">@</i>E-mail</div>
+		  								<input type="text" placeholder="Введите свой адрес электронной почты">
+		  							</div>
+		  							<div class="wrap-input">
+		  								<div class="title"><i class="fa fa-phone"></i>Телефон</div>    
+		  								<input type="text" class="phone" placeholder="Введите свой телефон">
+		  							</div>
+		  							
+		  							<div class="wrap-textarea">
+		  								<div class="title"><i class="fa fa-comment"></i>Комментарий</div>    
+		  								<textarea placeholder="Введите свой комментарий"></textarea>
+		  							</div>
+	  								<div class="grd-btn ">
+										<div class="wrp animated"></div>
+										<input type="button" class="grn-btn" data-toggle="modal"  data-target="#thx" href="#thx"  value="Забронировать столик">
+									</div>
+		  						</form>
+		  					</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- ИСТОЧНИКИ -->
+			<div  class="modal-wrapper modal fade" id="source" tabindex="-1" role="dialog" aria-labelledby="source" aria-hidden="false" >
+				<div class="modal-dialog">
+				    <div class="modal-content">
+		  				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		  				<div class="wrap">
+		  					<h2>Источники RestAdvisor</h2>
+		  					<p>
+		  						И даже сейчас Роботизированный алгоритм Рестика читает новые отзывы, которые Вы оставили на специализированных сайтах и сервисах — для того, чтобы впервые отразить динамику изменения Ваших мнений к ресторанам! 
+		  					</p>
+		  					<div class="sources-items table">
+		  						<div class="row">
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1222222</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name_2.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name_3.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name_4.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  						</div>
+
+		  						<div class="row">
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name_5.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name_6.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name_7.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  						</div>
+
+		  						<div class="row">
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name_8.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name_9.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  							<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name_10.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+		  						</div>
+		  						<div class="row">
+									<div class="cell">
+		  								<a href="#" class="read-item">
+											<span class="reviews">
+												<span class="count">1</span>
+												<span class="text">отзыв</span>
+											</span>
+											<span class="icon-site"><span class="img"><img src="images/tmp_name_1.png" alt=""></span>
+												<span class="rating">
+													<span>Рейтинг</span>
+													<span class="count">4.2</span>
+												</span>
+											</span>
+										</a>
+		  							</div>
+									<div class="cell"></div>
+									<div class="cell"></div>
+		  						</div>
+		  					</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- БРОНЬ -->
+			<div class="modal-wrapper modal fade" id="reservation" tabindex="-1" role="dialog" aria-labelledby="reservation" aria-hidden="false" >
+				<div class="modal-dialog">
+				    <div class="modal-content">
+		  				<button type="button" class="close" data-dismiss="modal"></button>
+		  				<div class="wrap">
+		  					<div class="header">Бронирование столика в ресторане</div>
+		  					<div class="mbody">
+		  						<form action="">
+			  						<div class="w50">
+			  							<div class="type"><i class="fa fa-cutlery"></i>Ресторан</div>
+			  							<div class="name">
+			  								<div class="title">«Большая кухня»</div>
+			  								<p>Лиговский пр-т, д. 30а, ТРЦ «Галерея», 5 этаж</p>
+			  							</div>
+			  							<div class="date-choose">
+			  								<div class="title">Выберите дату</div>
+			  								<div class="calendar"></div>
+			  								<div class="choosendatevalue"><input type="hidden"><span class="value"></span></div>
+			  							</div>
+			  						</div>
+			  						<div class="w50">
+			  							<div class="wrap-input">
+			  								<div class="title"><i class="fa fa-user"></i>Имя</div>
+			  								<input type="text" placeholder="Введите свое имя">
+			  							</div>
+			  							<div class="wrap-input">
+			  								<div class="title"><i class="fa fa-phone"></i>Телефон</div>    
+			  								<input type="text" class="phone" placeholder="Введите свой телефон">
+			  							</div>
+			  							<div class="wraperx2">
+			  								<div class="wrap-input">
+			  									<div class="title"><i class="fa fa-clock-o"></i>Время</div>
+			  									<input type="text" class="time" placeholder="Время">
+			  								</div>
+			  								<div class="wrap-input">
+			  									<div class="title"><i class="fa fa-users"></i>Количество гостей</div>
+			  									<input type="text" class="count" placeholder="Количество гостей">
+			  								</div>
+			  							</div>
+			  							<div class="wrap-textarea">
+			  								<div class="title"><i class="fa fa-comment"></i>Комментарий</div>    
+			  								<textarea placeholder="Введите свой комментарий"></textarea>
+			  							</div>
+		  								<div class="grd-btn ">
+											<div class="wrp animated"></div>
+											<input type="button" class="grn-btn" value="Забронировать столик">
+										</div>
+			  						</div>
+		  						</form>
+		  					</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	<!-- / Модальные окна -->
+	</body>
+</html>
+	

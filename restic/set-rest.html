@@ -1,0 +1,60 @@
+<!doctype html>
+<html> 
+	<head> 
+		<title>Рестик</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <![endif]-->
+		<link  type="text/css" rel="stylesheet" href="css/stylesheets/screen.css"  charset="utf-8">
+		<link  type="text/css" rel="stylesheet"  cssWatch="no"   href="css/animate.css"  charset="utf-8">
+		<link href="js/select2-3.5.2/select2.css"  cssWatch="no"  rel="stylesheet">
+		<link href="css/font-awesome.min.css"  cssWatch="no"  rel="stylesheet">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/swiper-slider/idangerous.swiper.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/bootstrap/css/bootstrap.min.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/pickmeup-datepicker/css/pickmeup.min.css">
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"> </script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"> </script>
+		<script src="js/swiper-slider/idangerous.swiper.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/select2-3.5.2/select2.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/bootstrap/js/bootstrap.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/chart.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/pickmeup-datepicker/js/jquery.pickmeup.min.js"></script>
+		<script src="js/jquery.mask.js"></script>
+ 		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript" src="js/js.js">	</script>
+		<!--[if lt IE 9]>
+			<script  type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<section class="index editor" >
+			<!-- заголовочный блок -->
+			<div class="main-container "  style="background-image: url(images/main-bg.png)">
+				<div class="remover" id="remover" >ПЕРЕТАЩИТЕ СЮДА ЧТОБЫ УДАЛИТЬ МАРКЕР</div>
+				<div class="main-z-index">
+					<style>
+						.ui-draggable{
+							margin-left: 15px!important;
+							transition: none!important;
+							-webkit-transition: none!important;
+							-moz-transition: none!important;
+						}
+					</style>
+					<!-- заголовок -->
+					<div class="main-title" >
+						<div class="title"><h1>ГЕНЕРАТОР КАРТЫ БАРОВ И РЕСТОРАНОВ</h1></div>
+						<div class="search-block"></div>
+						<div class="edit-btns">
+							<a href="javascript:;" id="add-rest"><i class="fa fa-plus-square-o"></i><span>Добавить маркер</span></a>
+							<a href="javascript:;" id="gen-rest"><i class="fa fa-check"></i><span>ГЕНЕРИРОВАТЬ HTML ДЛЯ ВСТАВКИ</span></a>
+						</div>
+						<div class="restorant-pseudo-map content-width setter" style=""></div>
+						<textarea  id="coder"></textarea>
+					</div>	
+				</div>
+			</div>
+		</section>	
+	</body>
+</html>
+	

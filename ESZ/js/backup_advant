@@ -1,0 +1,232 @@
+// софия
+
+// подсветка блоков при скролле
+var initscrlpxl = function(){
+	if( $(".scrlpxl:not(.isview)").length> 0 ){
+		$(window).scroll(function(){
+			var scrll = $(this).scrollTop()+$(window).height();
+			var time = 0;
+			$(".scrlpxl:not(.isview)").each(function(index){
+				var el_scroll = $(this);
+				if( el_scroll.next().hasClass("title") || el_scroll.next().hasClass("bordered-red-btn")  ){
+					time-=  el_scroll.next().hasClass("title")? 300 : 100
+				}else{
+					time+=500
+				}
+				setTimeout(function(){
+					 console.log(time)
+					var prlx = scrll - el_scroll["offset"]().top - el_scroll.height();
+					if (prlx>0) el_scroll.addClass("isview")
+				}, time);
+			});
+			
+		});		
+	}
+}
+
+
+
+		<!-- блок с примуществами -->
+			<div class="content-width advantages ">
+				<div class="advantages-title">преимущества ESZ.RU</div>
+				<div class="advantages scrolling">
+					<div class=" scrolling-item   scrolling-item-1">
+						<div class="title scrlpxl">удобно</div>
+						<p class="scrlpxl">
+							ЕСЗ работает в режиме 24/7 и <span class="text-mark">не требует регистрации.</span>
+						</p>
+						<p class="scrlpxl">
+							ЕСЗ связывает покупателей с десятками продавцов  <span class="text-mark">в один клик.</span>  Для начала работы с сервисом достаточно
+							разместить заявку в нужной категории
+						</p>
+						<p class="scrlpxl">
+							Параметры заявки позволяют скрыть контакты покупателя,
+							а также ограничить количество партнеров, что делает
+							работу с предложениями <span class="text-mark">простой и удобной. </span>
+						</p>
+						<div class="advantages-line scrlpxl"></div>
+					</div>
+					<div class=" scrolling-item  scrolling-item-2">
+						<div class="title scrlpxl">выгодно</div>
+						<p class="scrlpxl">
+							ЕСЗ работает для всех пользователей  <span class="text-mark">бесплатно.</span>
+						</p>
+						<p class="scrlpxl">
+							Партнеры ЕСЗ борются за каждую заявку, делая покупателю  <span class="text-mark">максимально выгодные предложения.</span>
+						</p>
+						<p class="scrlpxl">
+							Параметры заявки позволяют сравнивать предложения партнеров ЕСЗ и выбирать только самые выгодные, <span class="text-mark">не тратя время на поиски</span> специальных акций или скидок.
+						</p>
+						<div class="advantages-line scrlpxl"></div>
+					</div>
+					<div class="scrlpxl scrolling-item  scrolling-item-3">
+						<div class="title scrlpxl">надежно</div>
+						<p class="scrlpxl">
+							ЕСЗ работает только с надежными партнерами - <span class="text-mark">ведущими компаниями рынка.</span>
+							<br><br>
+						</p>
+						<p class="scrlpxl">
+							Действующая система модерации ЕСЗ обеспечивает покупателей только <span class="text-mark">достоверными и актуальными</span> предложениями.
+						</p>
+						<p class="scrlpxl">
+							ЕСЗ обеспечивает <span class="text-mark">защиту персональных данных</span>
+							и гарантирует, что они не будут переданы
+							третьим лицам.
+						</p>
+						<div class="advantages-line scrlpxl"></div>
+					</div>
+					<div class="action ">
+						<a class="scrlpxl bordered-red-btn" href="#"><span>начать работу с ESZ.RU</span></a>
+					</div>
+				</div>
+			</div>
+			<!-- / блок с примуществами -->
+
+
+
+	// блок с описанием
+		.advantages{
+
+			$animatetime: 1.3s;
+			$animatetime_title: 1s;
+			/* [ease, ease-in, ease-out, ease-in-out,  linear,  step-start, step-end ]	*/
+			$aniamte_funcc:  ease-out;
+
+			width: 930px;
+			margin: auto;
+
+			//просмотренные блоки
+			.isview, .isview *, .isview:after, .isview:before{
+				-webkit-transition-timing-function: $aniamte_funcc!important;
+				transition-timing-function: $aniamte_funcc!important;
+			}
+			.action{
+				display: block;
+				text-align: center;
+				margin-top: 10px;
+			}
+			.bordered-red-btn{
+				$bgposition:  -153px -131px no-repeat;
+				display: inline-block;
+				padding: 8px;
+				border: 2px solid $grayverylight;
+				@include anim(2s);
+				border-radius: 14px;
+				&:hover{
+					span{
+						background: $graydark url($icons) $bgposition;
+					}
+				}
+				&.isview{
+					border: 2px solid $red;
+					span{
+						opacity: 1
+					}
+				}
+				span{
+					@include anim(1s);
+					opacity: .1;
+					display: inline-block;
+					background: $red url($icons) $bgposition;
+					font-weight: 700;
+					font-size: 19px;
+					line-height: 75px;
+					padding-left: 75px;
+					padding-right: 20px;
+					border-radius: 10px;
+					color: white;
+					text-transform: uppercase;
+				}	
+			}
+			.advantages-title{
+				font-size: 48px;
+				@extend .font-light;	
+				color: $red;
+				margin-top: 70px;
+				height: 46px;
+				line-height: 43px;
+				text-transform: uppercase;
+				margin-bottom: 40px;
+				text-align: center;
+			}
+			.scrolling{
+				.scrolling-item{
+					.title{
+						@include anim($animatetime_title);
+						transition-delay: 0s!important;
+			  			-webkit-transition-delay: 0s!important;
+					}
+					p{
+						margin-bottom: 15px;
+						@include anim($animatetime);
+					}
+					.isview{
+						opacity: 1!important;
+					}
+					.advantages-line{
+						@include anim($animatetime);
+					   -webkit-transition-timing-function: ease-out!important;
+					   transition-timing-function:  ease-out!important;
+					   
+						&.isview{
+							background: #e86051;
+							&:before{
+								background: $red;
+								border: 8px solid #f8c9c4;
+							}
+						}
+					}
+					width: 416px;
+					.title, p{
+						opacity: .1;
+					}
+					position: relative;
+					clear: both;
+					padding-bottom: 60px;
+					text-align: right;
+					margin-bottom: 6px;
+				}
+				.scrolling-item-2{
+					text-align: left;
+					float: right;
+					.advantages-line{
+						left: -50px;
+						right: auto;
+					}
+				}
+				.title{
+					color: $red;
+					font-size: 19px;
+					font-weight: 700;
+					line-height: 34px;
+					margin-bottom: 21px;
+					text-transform: uppercase;
+				}
+				p{
+					color: $graydark;
+					line-height: 20px;
+					span{
+						line-height: 20px;
+						display: block;
+						display: inline-block;
+					}
+				}
+				.advantages-line{
+					&:before{
+						content: "";
+						background: #85888b;
+						border-radius: 50%;
+						@include square(25px);
+						border: 8px solid $grayverylight;
+						position: absolute;
+						top: -6px;
+						left: -12px;
+					}
+					@include box(2px, 100%);
+					position: absolute;
+					right: -50px;
+					top: 10px;
+					background: $grayverylight;
+				}
+			}
+		}

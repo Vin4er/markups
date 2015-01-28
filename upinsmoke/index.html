@@ -1,0 +1,505 @@
+<!doctype html>
+<html> 
+	<head> 
+		<title>UpInSmoke</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <![endif]-->
+		<link  type="text/css" rel="stylesheet" href="css/stylesheets/screen.css"  charset="utf-8">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/swiper-slider/idangerous.swiper.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/jscrollpane/style/jquery.jscrollpane.css">
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"> </script>
+		<script src="js/fancybox-2.1.5/source/jquery.fancybox.js?v=2.1.5" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/jscrollpane/script/jquery.mousewheel.js" type="text/javascript"  charset="utf-8"> </script>
+		<link   rel="stylesheet" type="text/css"  cssWatch="no"  href="js/fancybox-2.1.5/source/jquery.fancybox.css">
+		<script src="js/fancybox-2.1.5/source/helpers/jquery.fancybox-media.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/swiper-slider/idangerous.swiper.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/jscrollpane/script/jquery.jscrollpane.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/jquery.mask.js" type="text/javascript"  charset="utf-8"> </script>
+ 		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript" src="js/js.js">	</script>
+		<!--[if lt IE 9]>
+			<script  type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		
+		<header>
+			<div class="wrap">
+				<a href="/" class="logo  ib">
+					<img src="images/logo.png" alt="">
+				</a>
+				<div class="nav">
+					<nav class="table">
+						<div class="nav row">
+							<div class="cell"><a href="#catalog">Каталог</a></div>
+							<div class="cell"><a href="#dostavka">Доставка и гарантии</a></div>
+							<div class="cell"><a href="#map">Карта мест</a></div>
+							<div class="cell"><a href="#media">Галерея</a></div>
+							<div class="cell"><a class="fancybox" href="#dev">Афиша</a></div>
+							<div class="cell"><a class="fancybox" href="#dev">О нас</a></div>
+						</div>
+					</nav>				
+				</div>
+				<div class="fr phone">
+					<div>Бесплатный звонок</div>
+					<a href="tel:+78005550415">8 800 555-04-15</a>
+				</div>
+			</div>
+		</header>
+		
+		<section>
+			<div class="dev" id="dev"><h2>Раздел находится в разработке</h2></div>
+			<div class="wrap">
+				<div class="order-m" id="inline">
+					<h2>Заявка</h2>
+					<p>Мы напишем или позвоним Вам, чтобы оформить заказ. </p>
+					<a  class="close" href="javascript:;"></a>
+					<form id="SEND_FORM" action="/send.php" method="POST" >
+						<input name="send[name]" type="text"  placeholder="Имя">
+						<input name="send[tel]" type="tel" required  class="mask-phone">
+						<input name="send[email]" type="email" required pattern="[a-zA-Z0-9._\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,4}" title="example: name@example.com"   placeholder="example@gmail.com">
+						<textarea name="send[text]" id="" cols="0" rows="0" placeholder="Примечание"></textarea>
+						<input type="submit" class="btn" value="Отправить">
+					</form>
+				</div>
+				<div class="slider">
+					<div class="wrap absolute">
+						<div class="swiper-paginator"></div>
+						<div class="swiper-contols">
+							<span class="swiper-left"></span>
+							<span class="swiper-right"></span>
+						</div>
+					</div>
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<!--Slide-->
+							<div class="swiper-slide">
+									<div class="img x1280" style="background-image:url(images/banner-0.jpg)"></div>
+									<div class="img x960" style="background-image:url(images/banner-0_960.jpg)"></div>
+							</div>
+							<!--Slide-->
+							<div    class="swiper-slide">
+									<div class="img x1280" style="background-image:url(images/banner-1.jpg)"></div>
+									<div class="img x960" style="background-image:url(images/banner-1_960.jpg)"></div>
+							</div>
+							<!--Slide-->
+							<div   class="swiper-slide">
+								<div class="img x1280" style="background-image:url(images/banner-3.jpg)"></div>
+								<div class="img x960" style="background-image:url(images/banner-3_960.jpg)"></div>
+							</div>
+							<!--Slide-->
+							<div   class="swiper-slide">
+									<div class="img x1280" style="background-image:url(images/banner-4.jpg)"></div>
+									<div class="img x960" style="background-image:url(images/banner-4_960.jpg)"></div>
+							</div>
+							<!--Slide-->
+							<div   class="swiper-slide">
+									<div class="img x1280" style="background-image:url(images/banner-5.jpg)"></div>
+									<div class="img x960" style="background-image:url(images/banner-5_960.jpg)"></div>
+							</div>
+							<!--Slide-->
+						
+						</div>
+					</div>
+				
+				</div>
+			</div>
+
+			<div class="catalog" id="catalog">
+				<div class="wrap">
+					<h2>Каталог</h2>
+					<div class="table">
+						<div class="row">
+							<div class="cell">
+								<a href="javacsript:;">
+									<span class="img item-1"></span>
+									<p>Электронные кальяны</p>
+								</a>
+							</div>
+							<div class="cell">
+								<a href="javacsript:;">
+									<span class="img item-2"></span>
+									<p>Электронные мини-кальяны</p>
+								</a>
+							</div>
+							<div class="cell">
+								<a href="javacsript:;">
+									<span class="img item-3"></span>
+									<p>Электронные  испарители</p>
+								</a>
+							</div>
+							<div class="cell">
+								<a href="javacsript:;">
+									<span class="img item-4"></span>
+									<p>Одноразовые мини-кальяны</p>
+								</a>
+							</div>
+						</div>
+					</div>
+					<a class="btn"  href="#inline">Заказать</a>
+				</div>
+			</div>
+
+			<div class="action">
+				<div class="wrap">
+					<div  class="x960 img" style="background-image: url(images/discount_Smoke_2GO-960.jpg);" >
+						<img src="images/banner_Smoke_2GO-2_small.jpg" alt="Акция. Электронный испаритель со скидкой">
+					</div>
+					<div  class="x1280 img" style="background-image: url(images/banner_Smoke_2GO-2.jpg);">
+						<img src="images/banner_Smoke_2GO-2.jpg" alt="Акция. Электронный испаритель со скидкой">
+					</div>
+				</div>
+			</div>
+			<div class="video" id="media">
+				<div class="wrap">
+					<h2>Галерея</h2>
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<!--Slide-->
+							<div class="swiper-slide">
+								<div class="table">
+									<div class="row">
+										<div class="cell">
+											<a title="Видео с презентации кальянов в SHATUSH" href="https://www.youtube.com/watch?v=gfHYdoQ7Ub8" class="video-item fancybox-media">
+												<span class="img" style="background-image: url(images/video_tmp.png)"></span>
+												<p>Видео с презентации кальянов в SHATUSH</p>
+											</a>
+										</div>
+										<div class="cell">
+											<a href="images/photo_tmp_1.jpg" class="album-item fancybox">
+												<span class="img" style="background-image: url(images/photo_tmp_1.jpg)"></span>
+												<p>Фотоотчет с презентации кальянов в SHATUSH</p>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--Slide-->
+							<div class="swiper-slide">
+								<div class="table">
+									<div class="row">
+										<div class="cell">
+											<a href="images/photo_tmp_2.jpg" class="album-item fancybox">
+												<span class="img" style="background-image: url(images/photo_tmp_2.jpg)">
+												</span>
+												<p>Фотоотчет с презентации кальянов в SHATUSH</p>
+											</a>
+										</div>
+										<div class="cell">
+											<a href="images/photo_tmp_3.jpg" class="album-item fancybox">
+												<span class="img" style="background-image: url(images/photo_tmp_3.jpg)"></span>
+												<p>Фотоотчет с презентации кальянов в SHATUSH</p>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--Slide-->
+							<div class="swiper-slide">
+								<div class="table">
+									<div class="row">
+										<div class="cell">
+											<a href="images/photo_tmp_4.jpg" class="album-item fancybox">
+												<span class="img" style="background-image: url(images/photo_tmp_4.jpg)">
+												</span>
+												<p>Фотоотчет с презентации кальянов в SHATUSH</p>
+											</a>
+										</div>
+										<div class="cell">
+											<a href="images/photo_tmp_5.jpg" class="album-item fancybox">
+												<span class="img" style="background-image: url(images/photo_tmp_5.jpg)">
+												</span>
+												<p>Фотоотчет с презентации кальянов в SHATUSH</p>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					<div class="swiper-paginator"></div>
+					<div class="swiper-contols">
+						<span class="swiper-left"></span>
+						<span class="swiper-right"></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="map" id="map">
+				<div class="wrap">
+					<h2>в Санкт-Петербурге</h2>
+
+					<div class="toggler" style="display:none;">
+						<label  class="checkbox" uncheckall >
+							<input checked type="checkbox">
+							<ins></ins>
+							<span>Все</span>
+						</label>
+						<label  class="checkbox">
+							<input type="checkbox">
+							<ins></ins>
+							<span> Кафе/Рестораны</span>
+						</label>
+						<label class="checkbox">
+							<input type="checkbox">
+							<ins></ins>
+							<span>Клубы</span>
+						</label>
+						<label  class="checkbox">
+							<input type="checkbox">
+							<ins></ins>
+							<span>Магазины</span>
+						</label>
+					</div>
+					<div id="mapcart"></div>
+					<div class="searchpane">
+						<!-- в этом слеекте просто список метро выводим -->
+						<select name="" id="searchpane">
+							<option value="0">Все</option>
+							<option value="1">Петроградская</option>
+							<option value="2">Крестовский остров</option>
+							<option value="3">Гостиный двор</option>
+							<option value="4">Московская</option>
+							<option value="5">Маяковская</option>
+							<option value="6">Адмиралтейская </option>
+							<option value="7">Проспект Ветеранов</option>
+							<option value="8">Невский Проспект</option>
+							<option value="9">Удельная</option>
+							<option value="10">Комендантский проспект</option>
+							<option value="11">Площадь Восстания</option>
+							<option value="12">Садовая</option>
+							<option value="13">Международная</option>
+						</select>
+						<a href="javascript:;" class="closer"></a>
+
+						<a class="searchpane-title"></a>
+						<div class="scrollpane">
+						<!-- тутвыводим списокметро и количествомвсего -->
+							<ul class="drop">	
+								<li>
+									<a value="0" href="javascript:;">
+										Все
+									</a>
+								</li>
+								<li>
+									<a value="1" href="javascript:;">
+										Петроградская<span>2</span>
+									</a>
+									<ul data-value="1">
+										<li>
+											
+											<a  data-id="1"  data-coord='[59.965223, 30.315671000000066]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Паруса на крыше</span><span class="p">ул. Льва Толстого, 9</span></a>
+											<a  data-id="2"  data-coord='[59.96446899999999, 30.303120000000035]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Капулетти</span><span class="p">Большой пр. П.С., 74</span></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a value="2" href="javascript:;">
+										Крестовский остров<span>3</span>
+									</a>
+									<ul data-value="2">
+										<li>
+											<a  data-id="1"  data-coord='[59.965778654311606, 30.238974287033102]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Паруса</span><span class="p">Петровская коса, д. 9</span></a>
+											<a  data-id="2"  data-coord=' [59.965 , 30.23950000000002]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Море </span><span class="p">Петровская коса, дом 9</span></a>
+											<a  data-id="3"  data-coord='[59.96934299999999, 30.23321599999997]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Русская рыбалка</span><span class="p"> Южная дорога 11</span></a>
+											
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a value="3" href="javascript:;">
+										Гостиный двор<span>1</span>
+									</a>
+									<ul data-value="3">
+										<li>
+											<a  data-id="1"  data-coord='[59.93291900000001 ,30.331664000000046]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Эстрада</span><span class="p">ул. Садова, д.17</span></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a value="4" href="javascript:;">
+										Московская<span>1</span>
+									</a>
+									<ul data-value="4">
+										<li>
+											<a  data-id="1"  data-coord='[49.9794427 , 36.28553409999995]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Пряности и радости </span><span class="p">Московский пр., 191</span></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a value="5" href="javascript:;">
+										Маяковская<span>1</span>
+									</a>
+									<ul data-value="5">
+										<li>
+											<a  data-id="1"  data-coord='[59.93843099999999, 30.346780999999964]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Путанеска </span><span class="p">ул. Белинского, д. 6</span></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a value="6" href="javascript:;">
+										Адмиралтейская<span>1</span>
+									</a>
+									<ul data-value="6">
+										<li>
+											<a  data-id="1"  data-coord='[59.9318542, 30.311553799999956]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Шатуш </span><span class="p">наб. реки Мойки, 64</span></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a value="7" href="javascript:;">
+										Проспект Ветеранов<span>1</span>
+									</a>
+									<ul data-value="7">
+										<li>
+											<a  data-id="1"  data-coord='[59.8579686 , 30.194859299999962]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Самса </span><span class="p">Ленинский пр., 84/1</span></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a value="8" href="javascript:;">
+										Невский Проспект<span>1</span>
+									</a>
+									<ul data-value="8">
+										<li>
+											<a  data-id="1"  data-coord='[59.93366999999999, 30.32311900000002]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Мамалыга</span><span class="p">ул. Казанская, 2</span></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a value="9" href="javascript:;">
+										Удельная<span>2</span>
+									</a>
+									<ul data-value="9">
+										<li>
+											<a  data-id="1"  data-coord='[60.00565080000001 , 30.327831500000002]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Мамалыга </span><span class="p">Энгельса пр., 27</span></a>
+											<a  data-id="2"  data-coord='[60.00565080000001 , 30.327831500000002]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Мамалыга </span><span class="p">Энгельса пр., 27</span></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a value="10" href="javascript:;">
+										Комендантский проспект<span>2</span>
+									</a>
+									<ul data-value="10">
+										<li>
+											<a  data-id="1"  data-coord='[60.00524799999999 , 30.263424399999963]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Плюшкин </span><span class="p">Комендантский пр., 9 к. 2 ТК «Променад», 2-й этаж</span></a>
+										</li>
+										<li>
+											<a  data-id="2"  data-coord='[60.00524799999999 , 30.263424399999963]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Бричмула  </span><span class="p">Комендантский пр., 13</span></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a value="11" href="javascript:;">
+										Площадь Восстания<span>1</span>
+									</a>
+									<ul data-value="11">
+										<li>
+											<a  data-id="1"  data-coord='[59.93366999999999, 30.32311900000002]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Баклажан </span><span class="p">Лиговский пр., 30а ТК «Галерея», 4 этаж</span></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a value="12" href="javascript:;">
+										Садовая<span>1</span>
+									</a>
+									<ul data-value="12">
+										<li>
+											<a  data-id="1"  data-coord='[59.92609179999999 , 30.31613679999998]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">Хочу харчо </span><span class="p">ул. Садовая, 39/41</span></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a value="13" href="javascript:;">
+										Международная<span>1</span>
+									</a>
+									<ul data-value="13">
+									<li>
+											<a  data-id="1"  data-coord='[59.859519 , 30.39042799999993]' data-name="Место!3. Оно самое красивое ололо" href="javascript:;"><span class="b">ресторан Ялта</span><span class="p">ул. Бухарестская, 47</span></a>
+										</li>
+									</ul>
+								</li>
+								
+							</ul>	
+						</div> 
+					</div>
+				
+				</div>
+			</div>
+				
+				
+			<div class="bottom-block" id="dostavka">
+				<div class="wrap">
+					<div class="table">
+						<div class="row">
+							<div class="cell">
+								<div class="cellwrapper">
+									<h3>Доставка</h3>
+									<div class="scooter"></div>
+									<div class="prices">
+										<p>По Петербургу<b>300<span class="rub"></span></b></p>
+										<p>БЕСПЛАТНО при заказе от<b>3500<span class="rub"></span></b></p>
+									</div>
+									<div class="gray-prices">
+										<div>По стране почтой России - <b>350</b><span class="rub"></span></div>
+										<p>Обратитесь к оператору для расчета.</p>
+									</div>
+								</div>
+							</div>
+							<div class="cell">
+								<div class="cellwrapper">
+									<h3>Кальян на выезд</h3>
+									<div class="wrap-img">
+										<div class="img" style="background-image: url(images/photo_tmp_7.jpg)"></div>
+										<p>Сделайте ваше торжество незабываемым</p>
+										<a class="btn" href="#inline">Заказать</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>	
+	<!-- Футер -->
+		<footer>
+			<div class="wrap">
+				<div class="f-title">Заказ</div>
+				<p>По вопросам приобретения обращайтесь по телефону</p>
+				<a href="tel:+78005550415" class="phone">8 800 555-04-15</a>
+				<p>WhatsApp</p>
+				<a href="javascript:;" class="phone">+7 911 170-59-16</a>
+				<div class="social">
+					<a class="vk" target="blank" href="https://vk.com/upinsmokespb"></a>
+					<a class="fb" target="blank" href="https://www.facebook.com/upinsmokespb"></a>
+					<a class="inst" target="blank"  href="http://instagram.com/upinsmokespb"></a>
+				</div>
+				<div class="nav mapssite">
+					<nav class="table">
+						<div class="nav row">
+							<div class="cell"><a href="#catalog">Каталог</a></div>
+							<div class="cell"><a href="#dostavka">Доставка и гарантии</a></div>
+							<div class="cell"><a href="#map">Карта мест</a></div>
+							<div class="cell"><a href="#media">Галерея</a></div>
+							<div class="cell"><a class="fancybox" href="#dev">Афиша</a></div>
+							<div class="cell"><a class="fancybox" href="#dev">О нас</a></div>
+						</div>
+					</nav>				
+				</div>
+				<a href="http://legion.info/" target="blank" class="legion-copy">
+					<span>Создание сайта</span>
+					<img src="images/logion.png" alt="Интернет агентсво Легион">
+					<span>www.ralegion.ru</span>
+				</a>
+			</div>
+		</footer>
+	<!-- Футер -->
+
+	</body>
+</html>
+	

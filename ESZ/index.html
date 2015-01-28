@@ -1,0 +1,471 @@
+<!doctype html>
+<html> 
+	<head> 
+		<title>EZS</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <![endif]-->
+
+		<link  type="text/css" rel="stylesheet" href="css/stylesheets/screen.css"  charset="utf-8">
+
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/swiper-slider/idangerous.swiper.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/bootstrap-modal/css/bootstrap.min.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/pickmeup-datepicker/css/pickmeup.min.css">
+
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"> </script>
+
+		<script src="js/swiper-slider/idangerous.swiper.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/bootstrap-modal/js/bootstrap.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/pickmeup-datepicker/js/jquery.pickmeup.min.js"></script>
+		<script src="js/jquery.mask.js"></script>
+		<script type="text/javascript" src="js/js.js">	</script>
+		
+		<!--[if lt IE 9]>
+			<script  type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		
+
+		<header>
+			<div class="content-width">
+				<a href="/" class="logo" >
+					<img src="images/logo.png" alt="ESZ.ru">
+				</a>
+
+				<!-- просто не выводим блок если юзер не залогинен -->
+				<div class="auth fr">
+					<div class="username"><i></i><span>Скоропостижный Анатолий</span></div>
+					<div class="balance">
+						<a href="#" class="balance-link">Ваш баланс</a>
+						<span class="current-count">666 000 <span class="currency">руб</span> </span>
+					</div>
+					<div class="actions">
+						<a href="#" class="settings" title="Настройки"><i></i><span>настройки</span></a>
+						<a href="#" class="logout" title="Выход"><i></i><span>выход</span></a>
+					</div>
+				</div>
+				<!-- / просто не выводим блок если юзер не залогинен -->
+
+				<nav class="fr">
+					<div class="nav">
+						<a href="#" title="">Партнерам</a>
+						<a href="javascript:;" data-toggle="modal"  data-target="#auth" title="">Личный кабинет</a>
+						<a href="javascript:;" data-toggle="modal"  data-target="#feedback" title="">Обратная связь</a>
+					</div>
+				</nav>
+				
+				
+
+			</div>
+		</header>
+	
+		<section>
+			<div class="content-width">
+				<h1 class="main-title"><span>Единый сервис заявок</span></h1>
+				<!-- таблица "онас" -->
+				<div class="about-border">
+					<div class="table about">
+						<div class="row">
+							<div class="cell item-1">
+								<i></i>
+								<div  class="about-title">Кредиты</div>
+								<ul>
+									<li><a href="#" title=""><span>Потребительский</span></a></li>
+									<li><a href="#" title=""><span>Автокредит</span></a></li>
+									<li><a href="#" title=""><span>Ипотека</span></a></li>
+									<li><a href="#" title=""><span>Для бизнеса</span></a></li>
+								</ul>
+							</div>
+							<div  class="cell item-2">
+								<i></i>
+								<div class="about-title">Страхование</div>
+								<ul>
+									<li><a href="#" title=""><span>ОСАГО</span></a></li>
+									<li><a href="#" title=""><span>КАСКО</span></a></li>
+									<li><a href="#" title=""><span>Зеленая карта</span></a></li>								
+								</ul>
+							</div>
+							<div class="cell item-3">
+								<i></i>
+								<div  class="about-title">Путешествия</div>
+								<ul>
+									<li><a href="#" title=""><span>Готовые туры</span></a></li>
+									<li><a href="#" title=""><span>Индивидуальные</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- / таблица "онас" -->
+			</div>
+
+			<!-- как работает -->
+			<div class="videoblock">
+				<div class="couter-order">всего отправленно 6564 заявок</div>
+				<!-- само видео -->
+				<div class="video">
+					<div class="controls">
+						<span class="play"></span>
+						<span class="close">&times;</span>						
+					</div>
+				</div>
+				<!-- / само видео -->
+				<div class="content-width">
+					<div class="videoblock-textblock">
+						<div class="videoblock-title">Как работает ESZ.RU?</div>
+						<div class="list">
+							<div class="item">
+								<div class="title">1. Заполни заявку</div>
+								<p class="text">
+									Укажи параметры заявки и отправь нам. Заполнение заявки не требует регистрации и занимает не более 5 минут.
+								</p>
+							</div>
+							<div class="item">
+								<div class="title">2. Получи предложение</div>
+								<p class="text">
+									Получи выгодные предложения. Сервис дает возможность скрыть свои данные, а предложения будут поступать только через ЕСЗ по почте.
+								</p>
+							</div>
+							<div class="item">
+								<div class="title">3. Выбери лучшее</div>
+								<p class="text">
+									Сравни предложения и выбери лучшее. Для связи с партнерами ЕСЗ контакты указываются в предложении.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--  / как работает -->
+	
+
+			<!-- блок с примуществами -->
+			<div class="content-width advantages ">
+				<div class="advantages-title">преимущества ESZ.RU</div>
+
+
+				<div class="advantages scrolling">
+
+					<div class=" scrolling-item   scrolling-item-1">
+
+						<div class="advantages-circle scrlpxl"></div>
+						<div class="title scrlpxl">удобно</div>
+
+						<div class="advantages-height scrlpxl"></div>
+
+						<p class="scrlpxl">
+							ЕСЗ работает в режиме 24/7 и <span class="text-mark">не требует регистрации.</span>
+						</p>
+						<p class="scrlpxl">
+							ЕСЗ связывает покупателей с десятками продавцов  <span class="text-mark">в один клик.</span>  Для начала работы с сервисом достаточно
+							разместить заявку в нужной категории
+						</p>
+						<p class="scrlpxl">
+							Параметры заявки позволяют скрыть контакты покупателя,
+							а также ограничить количество партнеров, что делает
+							работу с предложениями <span class="text-mark">простой и удобной. </span>
+						</p>
+						
+						<div class="advantages-line scrlpxl"></div>
+					</div>
+
+
+					<div class=" scrolling-item  scrolling-item-2">
+						<div class="advantages-circle scrlpxl"></div>
+						<div class="title scrlpxl">выгодно</div>
+						<div class="advantages-height scrlpxl"></div>
+
+
+						<p class="scrlpxl">
+							ЕСЗ работает для всех пользователей  <span class="text-mark">бесплатно.</span>
+						</p>
+						<p class="scrlpxl">
+							Партнеры ЕСЗ борются за каждую заявку, делая покупателю  <span class="text-mark">максимально выгодные предложения.</span>
+						</p>
+						<p class="scrlpxl">
+							Параметры заявки позволяют сравнивать предложения партнеров ЕСЗ и выбирать только самые выгодные, <span class="text-mark">не тратя время на поиски</span> специальных акций или скидок.
+						</p>
+						<div class="advantages-line scrlpxl"></div>
+						
+					</div>
+					<div class="scrlpxl scrolling-item  scrolling-item-3">
+						<div class="advantages-circle scrlpxl"></div>
+						<div class="title scrlpxl">надежно</div>
+						<div class="advantages-height scrlpxl"></div>
+						<p class="scrlpxl">
+							ЕСЗ работает только с надежными партнерами - <span class="text-mark">ведущими компаниями рынка.</span>
+							<br><br>
+						</p>
+						<p class="scrlpxl">
+							Действующая система модерации ЕСЗ обеспечивает покупателей только <span class="text-mark">достоверными и актуальными</span> предложениями.
+						</p>
+						<p class="scrlpxl">
+							ЕСЗ обеспечивает <span class="text-mark">защиту персональных данных</span>
+							и гарантирует, что они не будут переданы
+							третьим лицам.
+						</p>
+						<div class="advantages-line scrlpxl"></div>
+					</div>
+					<div class="action ">
+						<a class="scrlpxl bordered-red-btn" href="#"><span>начать работу с ESZ.RU</span></a>
+					</div>
+				</div>
+			</div>
+			<!-- / блок с примуществами -->
+
+			<!-- Логоипы партнеров -->
+			<div class="logotypes ">
+				
+				<div  class="content-width">
+					<div class="swiper-container">
+						<div class="slider-controls content-width">
+							<a href="javascript:;" data-type="-1" class="logo-prev slider-btn"><i></i></a>
+							<a href="javascript:;" data-type="+1" class="logo-next  slider-btn"><i></i></a>
+						</div>
+						<div class="swiper-wrapper">
+							<!-- Слайд -->
+							<a href="#" title="" class="swiper-slide">
+								<img src="images/logotypes/1.png" alt="" title="">
+							</a>
+							<!-- Слайд -->
+							<a href="#" title="" class="swiper-slide">
+								<img src="images/logotypes/2.png" alt="" title="">
+							</a>
+							<!-- Слайд -->
+							<a href="#" title="" class="swiper-slide">
+								<img src="images/logotypes/3.png" alt="" title="">
+							</a>
+							<!-- Слайд -->
+							<a href="#" title="" class="swiper-slide">
+								<img src="images/logotypes/4.png" alt="" title="">
+							</a>
+							<!-- Слайд -->
+							<a href="#" title="" class="swiper-slide">
+								<img src="images/logotypes/5.png" alt="" title="">
+							</a>
+							<!-- Слайд -->
+							<a href="#" title="" class="swiper-slide">
+								<img src="images/logotypes/6.png" alt="" title="">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- / Логоипы партнеров -->
+
+		</section>
+<!-- Футер -->
+		<footer>
+			<div class="content-width ">
+				<div class="table">
+					<div class="row">
+						<div class="footer-item cell footer-item-1">
+							<div class="copyright">© 2014 Единый Сервис Заявок</div>
+							<div class="share">
+								<a href="#" class="vk" title="втонтакте"><i></i></a>
+								<a href="#" class="fb" title="facebook"><i></i></a>
+								<a href="#" class="tw" title="twitter"><i></i></a>
+							</div>
+						</div>
+						<div class="footer-item cell footer-item-2"> 
+							<a href="#" title="" class="title footer-link">О сервисе</a>
+							<a href="#" class="footer-link">Контакты</a>
+							<a href="#" class="footer-link">Обратная связь</a>
+						</div>
+						<div class="footer-item cell footer-item-3"> 
+							<a href="#" title="" class="title footer-link">покупателям</a>
+							<a href="#" class="footer-link">Помощь</a>
+							<a href="#" class="footer-link">Пользовательское соглашение</a>
+						</div>
+						<div class="footer-item cell footer-item-4"> 
+							<a href="#" title="" class="title footer-link">партнерам</a>
+							<a href="#" class="footer-link">Личный кабинет</a>
+							<a href="#" class="footer-link">Договор-оферта</a> 
+							<a href="#" class="footer-link">Тарифы</a> 
+						</div>
+						<div class="footer-item cell footer-item-5">
+							<a href="#" class="legion-logo">Разработка сайта</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+<!-- Футер -->
+
+	<!-- Модпльные окна -->
+
+		<div class="modal-wrapper">
+
+			<!-- Авторизация -->
+			<div class="bootstrap-modal modal fade auth"     id="auth"     tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+				<div class="modal-dialog">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="modal-title">Авторизация</div>
+							<form action="/" method="POST">
+								<div class="wrap-input">
+									<label for="">
+										<span>Логин</span>
+										<input required type="text">
+									</label>
+								</div>
+								<div class="wrap-input">
+									<label for="">
+										<span>Пароль</span>
+										<input  required type="password">
+									</label>
+								</div>
+								<div class="wrap-btn">
+									<input type="submit" value="Войти">
+									<div class="other">
+										<div>Или <a href="#reg"><span>зарегистрироваться</span></a></div>
+										<div><a  data-toggle="modal"   data-target="#recovery" href="javascript:;"><span>Забыли пароль</span></a></div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- / Авторизация -->
+
+			<!-- Обратная связь -->
+			<div class="bootstrap-modal modal fade feedback" id="feedback" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+				<div class="modal-dialog">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="modal-title">обратная связь</div>
+							<form action="/" method="POST">
+								<div class="wrap-input" required>
+									<label for="">
+										<span>Тема</span>
+										<select  name="" id=""><option value="">Предложения по сотрудничеству</option></select>
+									</label>
+								</div>
+								<div class="wrap-input" >
+									<label for="">
+										<span>Сообщение</span>
+										<textarea name="" id="" cols="30" rows="10"></textarea>
+									</label>
+								</div>
+								<div class="wrap-input" required>
+									<label for="">
+										<span>Имя</span>
+										<input type="text" required placeholder="Фалимия Имя Отчество">
+									</label>
+								</div>
+								<div class="wrap-input phone" required>
+									<label for="">
+										<span>Телефон</span>
+										<input type="text" required placeholder="+7 (123) 1112233">
+									</label>
+								</div>
+								<div class="wrap-input" required>
+									<label for="">
+										<span>Адрес электронной почты</span>
+										<input type="text" required placeholder="your@e-mail.com">
+									</label>
+								</div>
+								<div class="wrap-input wrap-capcha" required>
+									<label for="">
+										<span>Код безопасности</span>
+										<input type="text" required placeholder="Введите код с картинки">
+										<div class="capcha">
+											<div class="capcha-item">
+												<img src="images/capcha.png" alt="">
+												<a href="javascript:;"><span>Обновить</span></a>
+											</div>
+										</div>
+									</label>
+								</div>
+								<div class="wrap-btn">
+									<input type="submit" data-toggle="modal"  data-target="#thanx"  value="Отправить">
+									<div class="other">
+										<p>
+											<span>
+												Поля, отмеченные звездочкой, обязательные для заполнения.<br> Также необходимо заполнить хотя бы одно поле с контактными данными.
+											</span>
+										</p>
+									</div>
+								</div>
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- / Обратная связь -->
+
+			<!-- Восстановление -->
+			<div class="bootstrap-modal modal fade recovery" id="recovery" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+				<div class="modal-dialog">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="modal-title">восстановление пароля</div>
+							<form action="/" method="POST">
+								<div class="wrap-input" required>
+									<label for="">
+										<span>Адрес электронной почты</span>
+										<input type="text" required placeholder="your@e-mail.com">
+										<p class="label">
+											<span>Новый пароль будет выслан на указанный при регистрации адрес электронной почты</span>
+										</p>
+									</label>
+								</div>
+								<div class="wrap-btn">
+									<input type="submit"  data-toggle="modal"  data-target="#restored" value="Отправить">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /  Восстановление -->
+
+			<!-- Восстановленно -->
+			<div class="bootstrap-modal modal fade restored" id="restored" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+				<div class="modal-dialog">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="modal-title">восстановление пароля</div>
+							<p class="text ">Новый пароль выслан на указанный при регистрации адрес электронной почты</p>	
+							<div class="wrap-btn">
+								<a class="btn" href="javascript:;"  data-dismiss="modal">Вернуться на главную</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /  Восстановленно -->
+
+			<!-- Спасибо -->
+			<div class="bootstrap-modal modal fade thanx"    id="thanx"    tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+				<div class="modal-dialog">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="modal-title">Спасибо за интерес<br>к проекту!</div>
+							<p  class="text">
+								Ваше сообщение отправлено, <br>мы ответим вам в самое ближайшее время.
+							</p>
+							<div class="wrap-btn">
+								<a class="btn" href="javascript:;"  data-dismiss="modal">Вернуться на главную</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- / Спасибо -->
+		</div>
+	<!-- / Модальные окна -->
+
+	</body>
+</html>
+	

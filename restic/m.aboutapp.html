@@ -1,0 +1,300 @@
+<!doctype html>
+<html> 
+	<head> 
+		<title>Рестик</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <![endif]-->
+	    <meta name="viewport" content="width=device-width">
+		<link  type="text/css" rel="stylesheet" href="css/stylesheets/screen.css"  charset="utf-8">
+		<link  type="text/css" rel="stylesheet" href="css/stylesheets/mobile.css"  charset="utf-8">
+		<link  type="text/css" rel="stylesheet"  cssWatch="no"  href="js/fancybox/jquery.fancybox.css"  charset="utf-8">
+		<link  type="text/css" rel="stylesheet"  cssWatch="no"   href="css/animate.css"  charset="utf-8">
+		<link href="js/select2-3.5.2/select2.css"  cssWatch="no"  rel="stylesheet">
+		<link href="css/font-awesome.min.css"  cssWatch="no"  rel="stylesheet">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/swiper-slider/idangerous.swiper.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/bootstrap/css/bootstrap.min.css">
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/pickmeup-datepicker/css/pickmeup.min.css">
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"> </script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"> </script>
+		<script src="js/swiper-slider/idangerous.swiper.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/select2-3.5.2/select2.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/bootstrap/js/bootstrap.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/chart.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/pickmeup-datepicker/js/jquery.pickmeup.min.js"></script>
+		<script src="js/fancybox/jquery.fancybox.js"></script>
+		<script src="js/jquery.mask.js"></script>
+ 		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script src="js/m_js.js"></script>
+
+		<!--[if lt IE 9]>
+			<script  type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+
+	<body class="mobile">
+		<nav>
+			<div class="nav-controls"><a class="toggle-menu" href="javascript:;"><i class="fa fa-times"></i></a></div>
+			<ul>
+				<li><a href="#"><i class="fa fa-search"></i><span>Найти ресторан</span></a></li>
+				<li><a href="#"><i class="fa fa-comment-o flip-horizontal"></i><span>Написать отзыв</span></a></li>
+				<li><a href="#"><i class="fa fa-tablet"></i><span>Получить iPad</span></a></li>
+				<li><a href="#"><i class="fa fa-star-o"></i><span>Топ ресторанов</span></a></li>
+			</ul>
+		</nav>
+				<header class="dark">
+				<div class="main-menu ib">
+					<a href="javascript:;">
+						<i class="fa fa-bars"></i>
+					</a>
+				</div>
+				<a href="/" class="logo  ib">
+					<img src="images/logo.png" alt="">
+				</a>
+				
+				<div class="fr ib">
+					<div class="change-city ib">
+						<a href="javascript:;" class="change-city-link">
+							<i class="fa fa-map-marker"></i>
+							<span></span>
+							<input type="hidden">
+						</a>
+						<div class="multiselect-wrap change-city-link-sel"  data-dropdown-css-class="search-block-drop search-content-block-drop" data-placeholder="Выберите тип кухни">
+							<a class="hidden" href="javascript:;">
+								<span>Выбрано</span>
+								<span> (</span><span class="multiselect-counter">0</span><span>)</span>
+								<span class="multiselect-arrow" role="presentation">
+									<b role="presentation"></b>
+								</span>
+							</a>
+							<!-- список чебоксов для выпадающего списка -->
+							<div class="drop ccities" style="display: none">
+								<div class="search">
+									<input type="text" placeholder="Найти город">
+									<i class="fa fa-search"></i>
+									<div class="ste"></div>
+								</div>
+								<ul>
+									<li>
+										<label class="checkbox">
+											<input value="21312" name="checkboxName"  type="radio">
+											<ins></ins>
+											<span>Москва</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox">
+											<input value="32131" checked="ture" name="checkboxName" type="radio">
+											<ins></ins>
+											<span>Санкт-Петербург</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox">
+											<input value="3423"  name="checkboxName" type="radio">
+											<ins></ins>
+											<span>Уфа</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox">
+											<input value="153" name="checkboxName"  type="radio">
+											<ins></ins>
+											<span>Самара</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox">
+											<input value="531" name="checkboxName"  type="radio">
+											<ins></ins>
+											<span>Екатеринбург</span>
+										</label>
+									</li>
+								</ul>
+								<a href="javascript:;" onclick="$('.search-content-block-drop').click();" class="grn-btn set-city	">Выбрать город</a>
+							</div>
+						</div>
+					</div>
+				</div>
+		</header>
+		<div class="body">
+		
+	
+		<section class="">
+			<!-- картинка заблуренная -->
+
+			<!-- Для дестораторов -->
+			<div class="about-main-block app">
+				<div class="content-width">
+					<div class=""><img src="images/logo-big.png" alt="" title="RestAdvisor"></div>
+					<b>Ни один сайт в отдельности не обладает такой базой отзывов</b>
+					<a href="#" class="red-btn"><span class="wrap">Скачать приложение</span></a>
+				</div>
+			</div>
+
+			<div class=" left coffe  presentation-blocks animate-scroll">
+				<div class="content-width">
+					<i class="bg-img"></i>
+					<div class="fr">
+						<h2>Не пропустите ни одной брони</h2>
+						<p> Приложение рестик все сделает само, вам лишь нужно включить режим “автобронь”.</p>
+						<a href="#" class="grd-btn">
+							<div class="wrp animated"></div>
+							<div class="txt"><span>Попробовать</span></div>
+						</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="green-block animate-scroll">
+				<div class="content-width">
+					<p class="dark">Предоставьте вашим гостям уникальную возможность</p>
+					<p>выбрать и забронировать именно их любимый стол  в вашем ресторане без звонков и посредников! </p>	
+				</div>
+			</div>
+			
+			<div class="autobron padding-scale">
+				<div class="ipad"></div>
+				<div class="content-width">
+					<h2>Получите дополнительный приток гостей!</h2>
+					<p>Через “Рестик” у вас может забронировать столик, посетитель абсолютно любого стороженного сайта о ресторанах, будь то Afisha, TimeOut или Yandex — ведь “Рестик" бесплатен для всех! </p>
+					<a href="#" class="grd-btn">
+						<div class="wrp animated"></div>
+						<div class="txt"><span>Оценить</span></div>
+					</a>
+				</div>
+			</div>
+			<div class="green-block w940 animate-scroll">
+				<div class="content-width">
+					<p>Ни один сайт в отдельности не обладает такой базой отзывов!  </p>
+				</div>
+			</div>
+			
+			<div class="partyhard padding-scale">
+				<div class="content-width">
+					<h2>Сделаете мероприятия удобней</h2>
+					<p>Выбрать и забронировать, именно  их любимый стол в вашем ресторане  без звонков и посредников! </p>
+					<a href="#" class="grd-btn">
+						<div class="wrp animated"></div>
+						<div class="txt"><span>Оценить</span></div>
+					</a>
+				</div>
+			</div>
+
+			<div class="mobile-slider-app">
+				<div class="content-width">
+					<div class="toggler-slide">
+						<div class="controls">
+							<span class="next"></span>
+							<span class="prev"></span>
+						</div>
+						<div class="wrap-toggler-slide">
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+									<!--Slide-->
+									<div class="swiper-slide"data-url="images/slider-app-1.png">
+										<a href="images/slider-app-1.png"   rel="gallery1"  style="background-image: url(images/slider-app-1.png);"> 
+										
+										</a>
+									</div>
+									<!--Slide-->
+									<div class="swiper-slide" data-url="images/slider-app-2.png">
+										<a href="images/slider-app-2.png"  rel="gallery1" style="background-image: url(images/slider-app-2.png);"> 
+										
+										</a>
+									</div>
+									<!--Slide-->
+									<div class="swiper-slide" data-url="images/slider-app-1.png">
+										<a href="images/slider-app-1.png" rel="gallery1"   style="background-image: url(images/slider-app-1.png);"> 
+										
+										</a>
+									</div>
+									<!--Slide-->
+									<div class="swiper-slide" data-url="images/slider-app-2.png">
+										<a href="images/slider-app-2.png" rel="gallery1"  style="background-image: url(images/slider-app-2.png);"> 
+										
+										</a>
+									</div>
+									<!--Slide-->
+									<div class="swiper-slide" data-url="images/slider-app-1.png">
+										<a href="images/slider-app-1.png" rel="gallery1"  style="background-image: url(images/slider-app-1.png);"> 
+										
+										</a>
+									</div>
+									<!--Slide-->
+									<div class="swiper-slide" data-url="images/slider-app-2.png">
+										<a href="images/slider-app-2.png" rel="gallery1"  style="background-image: url(images/slider-app-2.png);"> 
+										
+										</a>
+									</div>
+									<!--Slide-->
+									<div class="swiper-slide" data-url="images/slider-app-1.png">
+										<a href="images/slider-app-1.png"  rel="gallery1"  style="background-image: url(images/slider-app-1.png);"> 
+										
+										</a>
+									</div>
+									<!--Slide-->
+									<div class="swiper-slide"data-url="images/slider-app-2.png">
+										<a href="images/slider-app-2.png"  rel="gallery1"  style="background-image: url(images/slider-app-2.png);"> 
+										
+										</a>
+									</div>
+									<!--Slide-->
+									<div class="swiper-slide" data-url="images/slider-app-1.png">
+										<a href="images/slider-app-1.png"  rel="gallery1" style="background-image: url(images/slider-app-1.png);"> 
+										
+										</a>
+									</div>
+									<!--Slide-->
+									<div class="swiper-slide"  data-url="images/slider-app-2.png">
+										<a href="images/slider-app-2.png" rel="gallery1" style="background-image: url(images/slider-app-2.png);"> 
+										
+										</a>
+									</div>
+										
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="download-app">
+				<div class="content-width">
+					<a href="#" class="red-btn"><span class="wrap">Скачать приложение</span></a>
+					</div>
+			</div>
+
+
+			</section>	
+<!-- Футер -->
+			<footer class="light">
+				<div class="content-width">
+
+					<div class="table">
+						<div class="row">
+							<div class="cell item-1">
+								<div class="download">
+									<p>Скачайте бесплатное мобильное приложение</p>
+									<a href="#" class="droid"></a>
+									<a href="#" class="apple"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cop">
+						<span>© 2014 Рестик.Ru</span>
+						<a href="#">Полная версия</a>
+					</div>
+				</div>
+			
+			</footer>
+	<!-- Футер -->
+
+
+		</div>
+	
+</html>
+	

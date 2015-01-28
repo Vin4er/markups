@@ -1,0 +1,2298 @@
+// reset, fonts  
+	// @import url(http://fonts.googleapis.com/css?family=Roboto:300,700);
+	@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+	@import "compass/reset";
+	body *{
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		letter-spacing: 0px;
+	}
+	body{
+		background: white;
+		font-family: 'Open Sans', sans-serif!important;
+		font-weight: 400;
+		// font-weight: 300;
+		min-width: 942px;
+	} 
+
+// Флоаты [.fl, .fr]  
+	.fr{
+		float: right;
+	}
+	.fl{
+		float: left;
+	}
+
+// Класс с легким шрифтом [@extend .font-light;]  
+	.font-light{
+		// font-family: 'Roboto' sans-serif; 
+		font-weight: 300;
+	}
+
+// Контейнер главнй с резиной
+	.content-width{
+		min-width: 942px;
+		max-width: 1088px;
+		width: 100%;
+		display: block;
+		margin: auto;
+	}
+
+// Переменные  [$bradius, $red, $gray, $graylight, $graydark, $grayverylight, $pink, $modalcolor, $icons]
+	// боррдеррадиус
+	$bradius: 6px;
+
+	// Цвета
+		// красный
+			$red: #e74c3c;
+		// серый 
+			$gray: #636668;
+		// Светло серый
+			$graylight: #e1f7ff;
+		// темно серый
+			$graydark: #393939;
+		//оченьсветлый серый
+			$grayverylight: #e5e7e9;
+		//розовый
+			$pink: #edeff1;
+		// цвет в модальном окне
+			$modalcolor: #3d3d3d;
+	// иконки
+	$icons: '../../images/icons.png';
+
+// МИКСИНЫ [box($w, $h), square($w), anim($time)]
+
+	// блок
+		@mixin box($w, $h) {
+			width: $w;
+			height: $h
+		}
+	// квадрат
+		@mixin square($w) {
+			width: $w;
+			height: $w
+		}
+	// Анимация
+		@mixin anim($time){
+			transition: $time;
+			-webkit-transition: $time;
+			-moz-transition:  $time;
+		}
+
+// общие настройки ссылкок
+	body a{
+		display: inline-block;
+		&:focus{
+			outline: none;
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+
+// иконки ТЕГ <I> 
+	i{
+		background-image: url($icons);
+		background-repeat: no-repeat;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+// таблица из дивов [.table .row .cell] 
+	.table{
+		display: table;
+		.thead{
+			display: table-header-group;
+		}
+		.tbody{
+			display: table-row-group;
+		}
+		.row{
+			display: table-row;
+			.cell{
+				display: table-cell;
+			}
+		}
+	}
+
+// Выделение слов и предложений в тексте [.text-mark] 
+	.text-mark{
+		color: $red;
+		background: #fdefed;
+		border-radius: 8px;
+		font-weight: 700;
+		padding: 0 5px;
+	}
+
+
+// конетент
+section{
+	// главный заголово
+		h1.main-title{
+			color: $gray;
+			font-size: 72px;
+			text-transform: uppercase;
+			font-weight: 300;
+			text-align: center;
+			@extend .font-light;
+			margin-top: 55px;
+			margin-bottom: 20px;
+		}
+	// аголовок для админа
+		.admin-title{
+			font-size: 36px;
+			font-weight: 600;
+			color: $gray;
+			text-transform: uppercase;
+			text-align: center;
+			margin: 30px 0px 10px 0px;
+		}
+	// пагинатор
+		.paginator{
+			font-size: 14px;
+			vertical-align: middle;
+			margin-bottom: 30px;
+			line-height: 90px;
+			&>*:hover{
+				opacity: .8;
+			}
+			.np{
+				@include square(26px);
+				font-family: "Letter Gothic Std";
+				color: #202020;
+				font-weight: 600;	
+				line-height: 26px;
+				text-align: center;
+				&.prev{}
+				&.next{}
+			}
+			span{
+				display: inline-block;
+				@include square(26px);
+				color: white;
+				text-align: center;
+				line-height: 26px;
+				cursor: default;
+				text-align: center;
+				background: $red;
+				border-radius: 50%;
+				&:hover{
+					opacity: 1;
+				}
+			}
+			a{
+				@include square(26px);
+				text-decoration: none;
+				text-align: center;
+				line-height: 26px;
+				color: $red;
+			}
+		}
+
+	// заголовк для доп инфы
+		.adv-info-title{
+			border-bottom: 1px solid #d7d7d7;
+			margin: 20px 0px 15px;
+			span{
+				font-size: 15px;
+				padding-right: 10px;
+				position: relative;
+				top: +9px;
+				display: inline-block;
+				background: white;
+				text-transform: uppercase;
+				font-weight: 400;
+				color: #393939;
+			}
+		}
+	// заголовк для заяки
+		.zayavka-head{
+			position: relative;
+			.page-controls{
+				position: absolute;
+				top: 1px;
+				width: 100%;
+				a{
+					text-decoration: none;
+					position: absolute;
+					&:hover{
+						text-decoration: none;
+						span{
+							border-bottom-color: transparent;
+						}
+					}
+					span{
+						color: $gray;
+						line-height: 12px;
+						font-size: 12px;
+						border-bottom: 1px solid #edeff1;
+					}
+					&.item-1{
+						&:before{
+							content: "";
+							margin-right: 8px;
+							border: 3px solid transparent;
+							border-right: 5px solid $modalcolor;
+							display: inline-block;
+						}
+						left: 0;
+					}
+					&.item-2{
+						&:after{
+							content: "";
+							margin-left: 8px;
+							border: 3px solid transparent;
+							border-left: 5px solid $modalcolor;
+							display: inline-block;
+						}
+						right: 0;
+					}
+				}
+			}
+			.title{
+				margin-right: 160px;
+				height: 45px;
+				margin-left: 160px;
+				.id{
+					color: $modalcolor;
+					font-size: 19px;
+					font-weight: 500;
+					letter-spacing: -1px;
+					text-transform: uppercase;
+				}
+				.zayavka-name{
+					padding-right: 80px;
+					color: $red;
+					font-size: 19px;
+					text-align: center;
+					padding-left: 30px;
+					font-weight: 500;
+					text-transform: uppercase;
+				}
+				.g-button{
+					font-size: 12px;
+					text-transform: uppercase;
+					padding-left: 10px;
+					line-height: 25px;
+					vertical-align: top;
+					height: 25px;
+					padding-right: 10px;
+				}
+				a{
+					margin: 0
+				}
+			}
+		}
+	// орма заявки 
+		.orderform{
+			.title{}
+			&.p{
+				.viewform{
+					a i{
+						&:before{
+							content: "-";
+							line-height: 21px;
+						}
+					}
+				}	
+				.hidden{
+					display: block!important;
+					visibility: visible!important;
+				}
+			}
+			form{
+				// кнопка которая разворачивает или своачивает доп форму
+				.viewform{
+					background: #e8e8e8;
+					padding: 20px;
+					text-align: left;
+
+					a{
+						text-decoration: none;
+						&:hover{
+							text-decoration: none;
+							opacity: .9;
+							span{
+								border-bottom-color: transparent;	
+							}
+						}
+						
+						i{
+							&:before{
+								line-height: 23px;
+								content: "+";
+								border-radius: $bradius;
+								vertical-align: middle;
+								display: inline-block;
+								@include square(23px);
+								text-align: center;
+								margin-right: 10px;
+								background: $red;
+								font-weight: 700;
+								color: white;
+							}
+						}
+						span{
+							color: $red;
+							font-size: 12px;
+							letter-spacing: -1px;
+							border-bottom: 1px solid #e77366;
+						}
+					} 
+					p{
+						color: $modalcolor;
+						vertical-align: middle;
+						font-size: 12px;
+						padding-left: 10px;
+						display: inline-block;
+					}
+				}
+			}
+		}
+	// Заявка, ЛК
+		.zayavka{
+			padding-bottom: 60px;
+			padding-top: 40px;
+			.other{
+				p{
+					padding-top: 28px;
+					span{
+						font-size: 12px;
+						color: $red;
+					}
+				}
+			}
+			.r-button{
+				width: 230px;
+				text-align: center;
+			}
+			.bottom-btn{
+				text-align: center;
+				.g-button{
+					margin-right: 17px;
+				}
+				.g-button, .r-button{
+					padding-left: 20px;
+					margin-top: 30px;
+					width: auto;
+					font-size: 14px;
+					font-weight: 600;
+					line-height: 40px;
+					height: 40px;
+					padding-right: 20px;
+				}
+			}
+			// ифнфа от клиента
+			.table{
+				width: 100%;
+				.row{
+					cursor: pointer;
+					height: 34px;
+					&:hover .cell{
+						background: #f3f3f3;
+					}
+					.cell{
+						padding-left: 10px;
+						padding-right: 10px;
+						vertical-align: middle;
+					}
+				}
+				.label{
+					font-weight: 700;
+					color: $modalcolor;
+				}
+				.value{
+					font-weight: 300;
+					color: $modalcolor;
+				}
+				.value-not-stable{
+					color: $red;
+					font-size: 12px;
+					font-weight: 400;
+					text-decoration: none;
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+			}
+			.client-main-info{
+				.table{
+					.row .cell:nth-child(6) .value{
+						padding-right: 0;
+					}
+					.label{
+					}
+					.value{
+						padding-right: 120px;
+					}
+				}
+			}
+			.client-info{
+				.cell{
+					width:  50%;
+				}
+				.client-msg{
+					.title{}
+					p{
+						padding: 20px;
+						background: #fafafa;
+						font-weight: 300;
+						color: $modalcolor; 
+						font-size: 15px;
+					}
+				}
+			}
+			// оболочка с бд для таблиц
+			.table-wrapper{
+				background: #fafafa;
+				padding:  9px;
+			}
+			.garaybg{
+				background: #f3f3f3;
+				text-align: center;
+			}
+			.formwrap{
+				width: 560px;
+				margin: auto;
+				text-align: left;
+				padding-top: 40px;
+				padding-bottom: 40px;
+				.percent input{
+					width: 85px!important;
+				}
+				.hidden{
+					display: block;
+				}
+				.shown{
+					display: block;
+				}
+				.file{
+					display: inline-block;
+					vertical-align: middle;
+					width: 324px;
+					a{
+						vertical-align: middle!important;
+						margin-top: 0;
+						margin-left: 10px;
+						margin-right: -4px;
+						&.view{
+							width: 60px;
+						}
+						&.upload{
+							width: 84px;
+						}
+					}
+					.f{
+						margin-right: -5px;
+						background: #f8f8f8;
+						position: relative;
+						height: 40px;
+						display: inline-block;
+						vertical-align: middle;
+						width: 160px;
+						line-height: 40px;
+						cursor: pointer;
+						color: $graydark;
+						padding-left: 10px;
+						padding-right: 10px;
+						text-overflow: ellipsis;
+						overflow: hidden;
+						white-space: nowrap;
+						border: 1px solid #efefef;
+						input{
+							left: 0;
+							right: 0;
+							opacity: 0;
+							width: 100%;
+							height: 100%;
+							position: absolute;
+						}
+					}
+					
+				}
+				.wrap-input{
+					.g-button {
+						font-size: 12px;
+						text-transform: uppercase;
+						padding-left: 10px;
+						line-height: 25px;
+						vertical-align: top;
+						height: 25px;
+						padding-right: 10px;
+					}
+					textarea{
+						width: 324px;
+						max-width: 324px;
+					}
+					&[required] label > span:after{
+						font-size: 12px;
+						top: -2px;
+						position: relative;
+					}
+					label{
+						padding-bottom: 20px;
+						&>span{
+							width: 230px;
+							font-weight: 600;
+						}
+						&>input[type=text], label>textarea{
+							width: 324px;
+						}
+					}
+					&.adds{
+						&>label>span{
+							vertical-align: top;
+							padding-top: 5px;
+						}
+						.inputs{
+							display: inline-block;
+							position: relative;
+							width: 324px;
+							input{
+								width: 324px;
+								background: #f8f8f8;
+							}
+							.adds-item{
+								&:first-child{
+									margin-top: 0px;
+								}
+								margin-top: 10px;
+								position: relative;
+							}
+							&>div{
+								display: inline-block;
+								vertical-align: middle;
+								width: 324px;
+							}
+						}
+						a{
+							&:hover{
+								opacity: .9;
+							}
+							position: absolute;
+							right: -34px;
+							top: 8px;
+							display: block;
+							@extend i;
+							@include square(25px);
+							background-position: -233px -137px;
+							&.rm{
+								background-position: -268px -137px;
+							}
+						}
+						
+					}
+					.checkbox{
+						padding-left: 227px;
+						top: -15px;
+						position: relative;
+						width: 100%;
+						span{
+							&:after{
+								content: "";
+								display: none;
+							}
+							color: $graydark;
+							font-size: 14px;
+							font-weight: 300;
+							width: 310px;
+							text-align: left;
+							position: relative;
+							top: -1px;
+							height: 11px;
+							vertical-align: top;
+						}
+					}
+				}
+			}
+		}
+	// Личный кабинет админа/партнера - таблицы
+		.tables{
+			&.partner-tables{
+				padding-top: 40px;
+			}
+			// табы
+				.tab-links{
+					$tabbordercolor: #d7d7d7;
+					margin-bottom: 30px;
+					border-bottom: 1px solid $tabbordercolor;
+					a{	
+						display: inline-block;
+						text-align: center;
+						margin-bottom: -1px;
+						border: 1px solid transparent;
+						border-radius: 10px 10px 0 0;
+						line-height: 50px;
+						border-bottom: 0px;
+						font-size: 15px;
+						color: #3d3d3d;
+						text-transform: uppercase;
+						padding: 0 20px;
+						&:hover{
+							text-decoration: none;
+							opacity: .7;
+						}
+						&.active{
+							background: #fff;
+							.title{
+								font-weight: 600;
+								color: $red;
+							}
+						
+							&:hover{
+								opacity: 1;
+							}
+							border-color: $tabbordercolor;
+						}
+						.title{
+							display: inline-block;
+							vertical-align: middle;
+						}
+						.conter{
+							color: $graydark;
+							font-size: 12px;
+							display: inline-block;
+							margin-left: 8px;
+							vertical-align: baseline;
+							position: relative;
+							top: 1px;
+							span{
+								margin-left: 1px;
+								color: $red;
+								font-weight: 700;
+							}
+						}
+					}
+				}
+
+			// фильтр для таблицы
+				.admin-table-filter{
+					// инпут
+					height: 55px;
+					.search-input{
+						display: inline-block;
+						position: relative;
+						vertical-align: middle;
+						margin-right: -4px;
+						width: 49%;
+						height: 40px;
+						border-top: 1px solid #d6d6d6;
+						border-bottom: 1px solid #f9f9f9;
+						border-left: 1px solid #dfdfdf;
+						border-right: 1px solid #dfdfdf;
+						border-radius: 10px;
+						input[type=text]{
+							width: 100%;
+							border-radius: 8px;
+							padding-left: 35px;
+							outline: none;
+							height: 100%;
+							border-top: 1px solid #dfdfdf;
+							border-bottom: 1px solid #f9f9f9;
+							border-left: 1px solid #efefef;
+							border-right: 1px solid #efefef;
+							background: #f9f9f9;
+							-webkit-box-shadow: inset 0px 1px 0px 0px #f0f0f0;
+							-moz-box-shadow:    inset 0px 1px 0px 0px #f0f0f0;
+							box-shadow:         inset 0px 1px 0px 0px #f0f0f0;
+						}
+						input[type=submit]{
+							position: absolute;
+							width: 12px;
+							height: 12px;
+							display: inline-block;
+							text-indent: -999px;
+							border: 0;
+							top: 13px;
+							left: 11px;
+							background: transparent url($icons) -238px -99px no-repeat;
+						}
+					}
+					// селект
+					.type-filter{
+						float: right;
+						display: inline-block;
+						vertical-align: middle;
+						margin-right: -4px;
+						line-height: 40px;
+						width: 120px;
+						vertical-align: middle;
+						.select{
+							display: inline-block;
+							vertical-align: middle;
+							line-height: 20px;
+							width: 100%;
+							height: 20px;
+							select{
+								height: 20px;
+								line-height: 20px;
+							}
+						}
+					}
+					// фильтр по дате
+					.date-filter{
+						float: right;
+						display: inline-block;
+						vertical-align: middle;
+						padding-left: 20px;
+						position: relative;
+						.dateshidden{
+							position: absolute;
+							cursor: pointer;
+							width: 100%;
+							#dpd1{
+								z-index: 1;
+							}
+							input{
+								position: absolute;
+								left: 0;
+								top: 0;
+								cursor: pointer;
+								width: 100%;
+								opacity: 0;
+							}
+						}
+						.dates{
+							line-height: 40px;
+							display: inline-block;
+							text-align: right;
+							&:hover{
+								opacity: .8;
+								cursor: pointer;
+							}
+							i{
+								@include square(15px);
+								position: relative;
+								top: -2px;
+								display: inline-block;
+								vertical-align: middle;
+								background-position: -238px -118px;
+							}
+							.date-choose{
+								cursor: pointer;
+								display: inline-block;
+								position: relative;
+								&:hover{
+									span{
+										border-bottom: 1px solid transparent;
+									}
+								}
+								span{
+									color: $graydark;
+									font-size: 15px;
+									border-bottom: 1px solid $pink;
+								}
+							}
+						} 
+					}
+				}
+
+			// сама таблица
+				.admin-table{
+					width: 100%;	
+					// подсвеченная строка
+					.hightlight{}
+					// для всех столбцов
+
+					.thead{
+						.row{
+						}
+						.cell{
+							font-weight: 700;
+							span{
+								cursor: pointer;
+								padding-right: 25px;
+								&:hover{
+									opacity: .7;
+								}
+								// для сортировки
+								&:after{
+									display: inline-block;
+									vertical-align: middle;
+									content: "";
+									margin-left: 6px;
+									position: relative;
+									top: 1px;
+									border: 3px solid transparent;
+									border-top: 5px solid $graydark;
+								}
+							}
+						}
+					}
+					.tbody{
+						.row{
+							&:hover{
+								cursor: pointer;
+								background: #fff;
+							}
+							background: #fafafa;
+							&.hightlight{
+								background: #ffebe9;
+								&:hover{
+									background: #fef1f0;
+								}
+							}
+						}
+					}
+					.item-1{
+
+						.stylizselect{
+							margin: auto;
+							width: 44px;
+							.placeholder{
+								&:before{
+									content: "";
+									display: block;
+									@include box(12px, 9px);
+									background: transparent url($icons) -254px -118px no-repeat;
+									margin: 5px auto;
+								}
+								color: transparent;
+							}
+						}
+						width: 94px;
+						text-align: center;
+						select{
+							max-width: 43px;
+						}
+					}
+					.cell{
+						vertical-align: middle;
+						color:  $graydark;
+						height: 50px;
+						line-height: 15px;
+						border-bottom: 2px solid white;
+						span{
+							text-overflow: ellipsis;
+							display: inline-block;
+							overflow: hidden;
+							max-width: 260px;
+							white-space: nowrap;
+						}
+					}
+					.item-2{}
+					.item-3{}
+					.item-4{
+						span{
+							display: inline-block;
+							min-width: 83px;
+							padding-right: 20px;
+						}
+					}
+					.item-5{
+						span{
+							padding-right: 20px;
+						}
+					}
+					.item-6{}
+					.item-7{
+						span{
+							padding-right: 0!important;
+						}
+						text-align: center;
+					}
+					.item-8{
+						padding-left: 20px;
+					}
+					.item-9{
+						span{
+							padding-right: 10px!important;
+						}
+					}
+					// точка
+					.mark{
+						background: $red;
+						border-radius: 50%;
+						display: inline-block;
+						@include square(10px)
+					}
+
+				}
+		}
+	// блок о нас на главной
+		.about-border{
+			position: relative;
+			border-radius: $bradius;
+			border: 4px solid $pink;
+			border-bottom: 0px;
+			&:before{
+				content: "";
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				border: 6px solid transparent;
+				border-bottom: 10px solid $pink;
+			}
+			&:after{
+				content: "";
+				background: white;
+				position: absolute;
+				top: 5px;
+				bottom: 0;
+				right: -4px;
+				z-index: 1;
+				left: -4px;
+			}
+			.about{
+				position: relative;
+				z-index: 2;
+				background: white;
+				width: 100%;
+				padding-bottom: 100px;
+				.cell{
+					$paddingleft: 35px;
+					padding-top: 82px;
+					width: 33.333%;
+					.about-title{
+						font-size: 19px;
+						line-height: 19px;
+						color: $red;
+						display: inline-block;
+						text-transform: uppercase;
+						font-weight: 700;
+						margin-bottom: 24px;
+						padding-left: $paddingleft;
+						&:hover{
+							opacity: .7;
+							text-decoration: none;
+						}
+					}
+					ul{
+						padding-left: 132px;
+						margin-right: -132px;
+						width: 100%;
+						li{
+							padding-left: $paddingleft;
+							margin-bottom: 11px;
+							a{
+								color: $graydark;
+								font-size: 16px;
+								&:hover{
+									text-decoration: none;
+									opacity: .9;
+									span{
+										border-bottom-color: transparent;
+									}
+								}
+								span{
+									border-bottom: 1px solid $pink;
+								}
+							}
+						}
+					}
+					&.item-1 i:after{
+						content: "";
+						background-position: 0px 0px
+					}
+					&.item-2 i:after{
+						content: "";
+						background-position: -100px 2px;
+					}
+					&.item-3 i:after{
+						content: "";
+						background-position: -199px 2px;
+					}
+					i{
+						position: relative;
+						float: left;
+						@include square(132px);
+						border: 7px solid $pink;
+						line-height: 115px;;
+						border-radius: $bradius;
+						text-align: center;
+						vertical-align: middle;
+						background-image: none;
+						&:after{
+							content: "";
+							background: url($icons) 0px 0px no-repeat;
+							@include square(99px);
+							vertical-align: middle;
+							display: inline-block;
+						}
+					}			
+				}
+			}
+		}
+	// Видео блок
+		.videoblock{
+			border-top: 3px solid $red;
+			border-bottom: 3px solid $red;
+			width: 100%;
+			margin-top: 40px;
+			height: 601px;
+			position: relative;
+			// текст в блоке
+			.videoblock-textblock{
+				margin-left: 50%;
+				padding-left: 200px;
+				padding-top: 70px;
+				.videoblock-title{
+					font-size: 36px;
+					color: $gray;
+					line-height: 42px;
+					text-transform: uppercase;
+					margin-bottom: 40px;
+				}
+				.list{
+					.item{
+						.title{
+							color: $gray;
+							font-size: 19px;
+							text-transform: uppercase;
+							line-height: 16px;
+							font-weight: 700;
+							margin-bottom: 14px;
+						}
+						p{
+							color: $graydark;
+							padding-bottom: 25px;
+							font-size: 15px;
+							padding-right: 10px;
+						}	
+					}
+				}
+			}
+			.couter-order{
+				background: $red;
+				line-height: 45px;
+				height: 40px;
+				font-weight: 700;
+				font-size: 19px;
+				color: white;
+				width: 430px;
+				margin: auto;
+				margin-top: -43px;
+				position: relative;
+				z-index: 2;
+				text-align: center;
+				border-radius: 10px 10px 0px 0px;
+				text-transform: uppercase;
+			}
+			.video{
+				overflow: hidden;
+
+				&.w100{
+					right: 0;
+					margin-right: 0;
+					.controls{
+						.close{
+							opacity: 1;
+							right: 75px;
+						}
+					}
+				}
+				position: absolute;
+				left: 0; 
+				@include anim(1s);
+				right: 50%;
+				top: 0px;
+				margin-right: -145px;
+				height: 595px;
+				background-image: url(../../images/peoples.png);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+				.controls{
+					.play{
+						display: block;
+						bottom: 40px;
+						right: 75px;
+						position: absolute;
+						@include box(144px, 76px);
+						cursor: pointer;
+						background: url($icons) 0px -132px no-repeat;
+						&:hover{
+							opacity: .7;
+						}
+					}	
+					.close{
+						top: 40px;
+						right: -100px;
+						font-size: 60px;
+						opacity: 0;
+						@include anim(.5s);
+			  			color: rgba(99, 102, 104, 0.6);
+						position: absolute;
+						cursor: pointer;
+						&:hover{
+							opacity: .7;
+						}
+					}					
+				}
+
+			}
+		}	
+	// блок с описанием
+		.advantages{
+			width: 930px;
+			margin: auto;
+			.action{
+				text-align: center;
+				margin-top: 3px;
+				position: relative;
+				z-index: 1;
+			}
+			.bordered-red-btn{
+				$bgposition:  -153px -131px no-repeat;
+				display: inline-block;
+				padding: 8px;
+				cursor: default;
+				background: white;
+				border: 2px solid $grayverylight;
+				@include anim(2s);
+				border-radius: 14px;
+				&.isview:hover{
+					span{
+						opacity: .7;
+					}
+				}
+				&.isview{
+					cursor: default;
+					border: 2px solid $red;
+					span{
+						opacity: 1;
+					}
+				}
+				span{
+					@include anim(1s);
+					opacity: .1;
+					display: inline-block;
+					background: $red url($icons) $bgposition;
+					font-weight: 700;
+					font-size: 19px;
+					line-height: 75px;
+					padding-left: 75px;
+					padding-right: 20px;
+					border-radius: 10px;
+					color: white;
+					text-transform: uppercase;
+				}	
+			}
+			.advantages-title{
+				font-size: 48px;
+				@extend .font-light;	
+				color: $red;
+				margin-top: 70px;
+				height: 46px;
+				line-height: 43px;
+				text-transform: uppercase;
+				margin-bottom: 40px;
+				text-align: center;
+			}
+			.scrolling{
+				cursor: default;
+				overflow: hidden;
+				.advantages-height{
+					&.isview{
+						top: 100%;
+						@include anim(6s);
+					   -webkit-transition-timing-function: linear!important;
+					   transition-timing-function:  linear!important;
+					}
+					position: absolute;
+					z-index: 1;
+					top: 27px;
+					bottom: -10px;
+					right: -50px;
+					left: -50px;
+					display: block;
+					background: rgba(255, 255, 255, 0.88);
+				}
+				.scrolling-item{
+					.title{
+						opacity: .1;
+						@include anim(.3s);
+					}
+					p{
+						margin-bottom: 15px;
+					}
+					.isview{
+						opacity: 1!important;
+					}
+					.advantages-circle{
+						@include anim(.6s);
+						&.isview{
+							background: $red;
+							border: 8px solid #f8c9c4;
+						}
+					}
+					.advantages-line{
+						background: #e86051;
+					}
+					width: 416px;
+					position: relative;
+					clear: both;
+					padding-bottom: 60px;
+					text-align: right;
+					margin-bottom: -3px;
+				}
+				.scrolling-item-2{
+					text-align: left;
+					float: right;
+					.advantages-circle{
+						right: 0px;
+						left: -61px;
+					}
+					.advantages-line{
+						left: -50px;
+						right: auto;
+					}
+				}
+				.title{
+					color: $red;
+					font-size: 19px;
+					font-weight: 700;
+					line-height: 34px;
+					margin-bottom: 21px;
+					text-transform: uppercase;
+				}
+				p{
+					color: $graydark;
+					line-height: 20px;
+					span{
+						line-height: 20px;
+						display: block;
+						display: inline-block;
+					}
+				}
+				.advantages-circle{
+					background: #85888b;
+					border-radius: 50%;
+					width: 25px;
+					height: 25px;
+					border: 8px solid #e5e7e9;
+					position: absolute;
+					top: 2px;
+					right: -61px;
+					z-index: 1;
+				}
+				.advantages-line{
+					@include box(2px, 100%);
+					position: absolute;
+					right: -50px;
+					top: 10px;
+					background: $grayverylight;
+				}
+			}
+		}
+	// Сладер партнеров
+		.logotypes{
+			position: relative;
+			margin-top: 66px;
+			padding-top: 70px;
+			padding-bottom: 80px;
+			border-top: 1px solid #f1f2f4;
+			a:hover{
+				opacity: .7;
+				@include anim(.5s);
+			}
+			.slider-controls{
+				position: absolute;	
+				@include box(100%, 0);
+				z-index: 2;
+				top: 0;
+				left: 0;
+				.slider-btn{
+					display: block;
+					position: absolute;	
+					@include anim(.5s);
+					@include box(25px, 100%);
+					line-height: 100px;
+					vertical-align: middle;
+					top: 0;
+					&:hover{
+						opacity: .4;
+					}
+					i{
+						@include box(15px, 25px);
+					}
+					&.logo-prev{
+						left: 0;
+						text-align: left;
+						i{
+							background-position: -212px -99px;
+						}		
+					} 
+					&.logo-next{
+						right: 0;
+						text-align: right;
+						i{
+							background-position: -198px -99px;
+						}			
+					} 			
+				}
+			}
+			.swiper-container{
+				height: 100px;
+			}
+			.swiper-slide{
+				vertical-align: middle;
+				line-height: 100px;
+				height: 100px;
+				text-align: center;
+				img{
+					vertical-align: middle;
+				}
+			}
+		}
+}
+
+//футер
+	footer{
+		background: $gray;
+		height: 200px;
+		padding-top: 48px;
+		.table{
+			width: 100%;
+		}
+		.footer-item{
+			&.footer-item-1{
+				width: 280px;
+			}
+			&.footer-item-2{
+				width: 180px;
+				padding-right: 70px;
+			}
+			&.footer-item-3{
+				width: 190px;
+				padding-right: 70px;
+			}
+			&.footer-item-4{
+				width: 120px;
+			}
+			&.footer-item-5{
+				text-align: right;
+			}
+			.legion-logo{
+				text-decoration: none;
+				&:hover{
+					opacity: 0.6;
+					text-decoration: none;
+				}
+				&:after{
+					content: "";
+					@include square(31px);
+					background-image: url($icons);
+					display: inline-block;
+					vertical-align: middle;
+					margin-left: 10px;
+					background-position: -157px -99px;
+				}
+			}
+			a{
+				color: $graylight;
+				line-height: 18px;
+				display: block;
+				margin-bottom: 10px;
+				&:hover{
+					opacity: .8;
+				}
+				&.title{
+					text-transform: uppercase;
+					line-height: 12px;
+					margin-bottom: 20px;
+				}
+			}
+		}
+		.copyright{
+			font-size: 14px;
+			padding-bottom: 20px;
+			color: $graylight;
+		}
+		.share{
+			a{
+				display: inline-block;
+				margin-right: 2px;
+			}
+			i{
+				@include square(27px);
+			}
+			.vk{
+				i{
+					background-position: -56px -99px;
+				}
+			}
+			.fb{
+				i{
+					background-position: -89px -99px;
+				}
+			}
+			.tw{
+				i{
+					background-position: -122px -99px;
+				}
+			}
+		}
+	}
+
+//хедер
+	header{
+		height: 87px;
+		padding-top: 36px;
+
+		//хедер для админки 
+		.admin{
+			.auth{
+				margin-left: 20px;
+				text-align: right;
+				max-width: 200px;
+				display: inline-block;
+				.username {
+					height: 20px;
+					max-width: 170px;
+					float: right;
+					white-space: nowrap;
+				}
+			}
+			nav{
+				a{
+					margin-left: 16px;
+					.nav{
+						padding: 0 16px;
+					}
+					&:hover{
+						.counter{
+							background: rgba(231, 76, 60, 0.56);
+						}
+					}
+					.name{
+						font-size: 16px;
+						display: inline-block;
+						vertical-align: baseline;
+					}
+					.counter{
+						margin-left: 5px;
+						font-size: 12px;
+						background: $red;
+						line-height: 21px;
+						text-align: center;
+						max-width: 37px;
+						color: white;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						position: relative;
+						top: -1px;
+						padding: 0 4px;
+						border-radius: 10px;
+						display: inline-block;
+						vertical-align: middle;
+					}	
+				}
+			}
+		}
+
+		// блок с авториацией
+		.auth{
+			margin-left: 90px;
+			width: 275px;
+			margin-top: -3px;
+			.username{
+				height: 20px;
+				i{
+					background-position: 0px -99px;
+					@include box(15px, 18px);
+					margin-right: 10px;
+					margin-left: -25px;
+				}
+				span{
+					font-weight: 400;
+					color: #636668;
+					overflow: hidden;
+					font-size: 19px;
+					max-width: 100%;
+					display: inline-block;
+					line-height: 19px;
+					vertical-align: middle;
+					height: 19px;
+					text-overflow: ellipsis;
+				}
+			}
+			.actions{
+				a{
+					text-decoration: none;
+					line-height: 19px;
+					margin-right: 10px;
+					&:hover{
+						span{
+							border-bottom-color: transparent;
+						}
+					}
+					span{
+						border-bottom: 1px solid $pink;
+						font-size: 12px;
+						line-height: 15px;
+						display: inline-block;
+						margin-left: 5px;
+						vertical-align: bottom;
+					}
+					i{
+						@include square(14px);
+					}
+					&.settings{
+						span{
+							color: #3d3d3d;
+						}
+						i{
+							background-position: -17px -101px;
+						}
+					}
+					&.logout{
+						span{
+							color: $gray;
+						}
+						i{
+							background-position:  -36px -101px;
+						}
+					}
+				}
+			}
+			.balance{
+				height: 18px;
+				.balance-link{
+					color: $red;
+					font-size: 15px;
+					font-style: italic;
+					text-decoration: underline;
+					margin-right: 6px;
+					&:hover{
+						text-decoration: none;
+					}
+				}
+				.current-count, .currency{
+					color: $gray;
+					font-weight: 400;
+					font-size: 12px;
+				}
+			}
+		}
+		// навигация
+		nav{
+			border-radius: $bradius;
+			overflow: hidden;
+			margin-top: 3px;
+			.nav{
+				background: #f4f5f7;
+				padding: 0 24px;
+			}
+			a{
+				font-size: 16px;
+				color: #393939;
+				line-height: 40px;
+				display: inline-block;
+				vertical-align: middle;
+				margin-left: 32px;
+				text-decoration: none;
+				&:first-child{
+					margin-left: 0;
+				}
+				&:hover{
+					text-decoration: none;
+					color: $red;
+				}
+			}
+		}
+	}
+
+//Модальные окна
+	.modal-wrapper{
+		text-align: center;
+		.modal-dialog{
+			display: inline-block;
+			width: auto;
+
+		}
+		.close{
+			background: transparent;
+			vertical-align: middle;
+			@include square(20px);
+			position: absolute;
+			line-height: 20px;
+			outline: none;
+			right: 15px;
+			z-index: 1;
+			border: 0;
+			top: 15px;
+			&:hover{
+				opacity: .7;
+			}
+			span{
+				vertical-align: middle;
+				font-size: 24px;
+				color: #cecece;
+			}
+		}
+		.text{
+			font-size: 15px;
+			color: $graydark;
+			text-align: center;
+			margin: auto;
+			padding-bottom: 10px;
+			width: 400px;
+		}
+		.other{
+			padding-top: 20px;
+			margin-bottom: -8px;
+			a{
+				vertical-align: middle;
+				font-size: 16px;
+				line-height: 30px;
+				color: $modalcolor;
+				&:hover{
+					text-decoration: none;
+					opacity: .9;
+					span{
+						border-bottom-color: transparent;
+					}
+				}
+				span{
+					border-bottom: 1px solid $pink;
+				}
+			}
+		}
+		.bootstrap-modal{
+			// авторизация
+				&#auth{
+					.wrap-input{
+						label{
+							&>span{
+								width: 75px;
+							}
+							input[type=text], input[type=password]{
+								width: 222px;
+							}
+						}
+					}
+				}
+			// Восстаноление пароля
+				&#recovery{
+					[type=text], p.label span{
+						width: 325px;
+						display: inline-block;
+						text-align: left;
+					}
+					p.label{
+						text-align: right;
+					}
+				}
+			//Восстановлен
+				&#restored{
+					.modal-body{
+						padding: 20px 75px 40px 75px;
+					}
+				}
+			// обратная связь
+				&#feedback{
+					$inputwidth: 324px;
+					.other{
+						margin-bottom: 0;
+						p span{
+							font-size: 12px;
+							color: $red;
+						}
+					}
+					.capcha{
+						text-align: right;
+						padding-top: 12px;
+						.capcha-item{
+							display: inline-block;
+							text-align: left;
+							width: $inputwidth;
+						}
+						img{
+							width: 127px;
+							height: 46px;
+							vertical-align: middle;
+							display: inline-block;
+						}
+						a{
+							margin-left: 25px;
+							span{
+								border-bottom: 1px solid $pink;
+								color: $modalcolor;
+								font-size: 12px;
+								text-transform: lowercase;
+							}
+							&:hover{
+								text-decoration: none;
+								opacity: .7;
+								span{
+									border-bottom-color: transparent;
+								}
+							}
+							display: inline-block;
+							vertical-align: middle;
+						}
+					}
+					.wrap-input{
+						label{
+							padding-bottom: 20px;
+							&>span{
+								width: 220px;
+							}
+							input[type=text], input[type=password], textarea, select{
+								width: $inputwidth;
+								max-width: $inputwidth;
+							}
+						}
+					}
+				}
+			// Спасибо
+				&#thanx{
+					.modal-body{
+						padding: 20px 120px 40px 120px;
+					}
+					.btn{
+						width: 260px;
+					}
+					.modal-title{
+						line-height: 41px;
+					}
+				}
+				.modal-title{
+					@extend .font-light;
+					font-size: 36px;
+					color: $modalcolor;
+					padding-top: 8px;
+					padding-bottom: 19px;
+					text-transform: uppercase;
+					text-align: center;
+				}
+				.modal-content{
+					background: #f9f9f9;
+				}
+				.modal-body{
+					padding: 20px 50px 40px 50px;
+				}
+		}	
+	}
+
+//Кнопки/инпуты
+
+	//datepicker
+		body .pickmeup {
+			&.pmu-view-months, &.pmu-view-years{
+				text-align: center;
+				padding-top: 6px;
+				padding-bottom: 6px;
+				.pmu-instance{
+					width: 220px;
+					nav {
+						height: 20px;
+						line-height: 20px;
+						padding-top: 3px;
+						border-radius: 8px!important;
+					}
+				}
+			}	
+			&.pmu-view-days{
+				width: 530px;
+				margin-left: -330px;
+				text-align: center;
+				padding: 10px 9px;
+			}
+			-webkit-box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.45);
+			-moz-box-shadow:    1px 1px 3px 0px rgba(50, 50, 50, 0.45);
+			box-shadow:         1px 1px 3px 0px rgba(50, 50, 50, 0.45);
+			margin-left: -30px;
+			.pmu-day-of-week, nav{
+				color: $gray;
+				font-size: 15px;
+			}
+			background: #f9f9f9;
+			border-radius: $bradius;
+			display: none;
+			position: absolute;
+			.pmu-instance{
+				display: inline-block;
+				text-align: center;
+				width: 251px;
+				height: auto;
+				padding: 0px;
+
+				.pmu-month.pmu-button {
+					height: 14px!important;
+					line-height: 14px!important;
+					background: $red;
+					width: 100%;
+					&:hover{
+						background: $red;
+						opacity: .7;
+					}
+				}
+			
+				nav{
+					height: 20px;
+					line-height: 14px;
+					padding-top: 6px;
+					font-size: 14px;
+					background: #e74c3c;
+					border-radius: 8px 8px 0px 0px;
+					text-transform: uppercase;
+					.pmu-next, .pmu-prev{
+						&:hover{
+							opacity: .7;
+							background: transparent url($icons) -274px -117px no-repeat;
+							&.pmu-prev{
+								background-position: -281px  -117px;
+							}
+						}
+						display: inline-block;
+						width: 9px;
+						height: 22px;
+						margin: 0;
+						padding: 3px 0px;
+						background: transparent url($icons) -274px -117px no-repeat;
+						margin-right: 10px;
+						&.pmu-prev{
+							margin-left: 10px;
+							margin-right: 0px!important;
+							background-position: -281px  -117px;
+						}
+					}
+					*{
+						color: white!important;
+					}
+				}
+				.pmu-day-of-week{
+					background: $red;
+					height: 20px;
+					margin-bottom: 6px;
+					line-height: 20px;
+					padding-top: 0px;
+					color: white;
+					border-radius: 0px 0px  8px 8px;
+					*{
+						line-height: 21px;
+						color: white!important;
+					}
+
+				}
+				.pmu-day-of-week *, .pmu-days *{
+					width: 33px;
+					margin-right: 2px;
+					color: #2f2f2f;
+					font-size: 9px;
+				}
+				&:first-child{
+					margin-right: 10px;
+				}
+				.pmu-months{
+					text-align: center;
+					margin: 10px auto;
+				}
+				.pmu-button{
+					color: #2f2f2f;
+					font-size: 12px;
+					@include square(33px);
+					line-height: 33px;
+					text-align: center;
+					background: #f5f5f5;
+					margin-right: 2px;
+					margin-bottom: 2px;
+					&.pmu-sunday{
+						margin-right: 0px;
+					}
+					&:hover, &.pmu-today {
+						background: #DFDFDF;
+					}
+					&.pmu-not-in-month{
+						color: #BACAD0;
+					}
+					&.pmu-selected{
+						background: $red!important;
+						color: white!important;
+					}
+					// выходные
+					&.pmu-saturday, &.pmu-sunday{
+						color: $red;
+					}
+
+					// выделенный
+					&.pmu-today{
+						color: $graydark;
+					}
+				}
+			}
+		}
+
+	// Чекбоксы
+		.checkbox{
+			display: inline-block;
+			height: 13px;
+			label{
+				&:hover{
+					ins{
+						opacity: .6;
+					}
+				}
+				display: inline-block;
+				height: 13px;
+				cursor: pointer;
+				//  чекбокс
+				input{
+					opacity: 0;
+					visibility: hidden;
+					display: inline-block;
+					@include square(13px);
+					margin-right: -13px;
+				}
+				// текст чекбокса
+				span{}
+				// картинка чекбокса
+				ins{
+					display: inline-block;
+					@include square(13px);
+					background: transparent url($icons) -253px -99px no-repeat;
+				}
+				// чекнутый чекбокс
+				input:checked{
+					&+ins{
+						background-position: -266px -99px;
+						&+span{}	
+					}
+				}
+			}
+		}
+
+	//серая кнопка
+		.g-button{
+			text-transform: uppercase;
+			border-radius: $bradius;
+			line-height: 41px;
+			background: #aaaaaa;
+			margin-top: 20px;
+			color: white;
+			border: 0;
+			&:hover{
+				background: $graylight;
+				text-decoration: none;
+			}
+		}
+		.r-button{
+			text-transform: uppercase;
+			border-radius: $bradius;
+			line-height: 41px;
+			background: $red;
+			margin-top: 20px;
+			font-weight: 700;
+			width: 220px;
+			color: white;
+			border: 0;
+			&:hover{
+				background: $graydark;
+				text-decoration: none;
+			}
+		}
+	// КНОПКА САБМИТ
+		.wrap-btn{
+			input[type=submit], .btn, .r-button{
+				text-transform: uppercase;
+				border-radius: $bradius;
+				line-height: 41px;
+				background: $red;
+				margin-top: 20px;
+				font-weight: 700;
+				width: 220px;
+				color: white;
+				border: 0;
+				&:hover{
+					background: $graydark;
+					text-decoration: none;
+				}
+			}
+		}
+	// ИНПУТЫ, ТЕКСТАРЕА и СЕЛЕКТ
+		.wrap-input{
+			//процент
+			.percent{
+				&:after{
+					content: "%";
+				}
+			}
+			&[required]{
+				label>span:after{
+					display: inline-block;
+					margin-right: -10px;
+					margin-left: 3px;
+					font-size: 18px;
+					content: "*";
+					color: $red;
+					width: 7px;
+				}
+			}
+			label{
+				padding-bottom: 10px;
+				font-size: 15px;
+				display: block;
+				p.label{
+					padding-top: 12px;
+					font-size: 12px;
+					color: #9e9e9e;
+					span{
+						display: inline-block;
+					}
+				}
+				&>span{
+					vertical-align: middle;
+					display: inline-block;
+					padding-right: 20px;
+					margin-right: -4px;
+					color: $modalcolor;
+					text-align: right;
+					font-weight: 700;
+				}
+				textarea{
+					border-color: rgb( 232, 232, 232 );
+					background-color: rgb( 255, 255, 255 );
+					vertical-align: top;
+					display: inline-block;
+					border-style: solid;
+					padding: 10px;
+					color: $modalcolor;
+					height: 62px;
+					border-width: 1px;
+				}
+				input[type=text], input[type=password], select{
+					border-color: rgb( 232, 232, 232 );
+					background-color: rgb( 255, 255, 255 );
+					vertical-align: middle;
+					display: inline-block;
+					padding-right: 10px;
+					border-style: solid;
+					padding-left: 10px;
+					color: $modalcolor;
+					border-width: 1px;
+					height: 40px;
+				}		
+				select{
+					cursor: pointer;
+					background: #ffffff; /* Old browsers */
+					background: -moz-linear-gradient(top,  #ffffff 0%, #f4f4f4 100%); /* FF3.6+ */
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f4f4f4)); /* Chrome,Safari4+ */
+					background: -webkit-linear-gradient(top,  #ffffff 0%,#f4f4f4 100%); /* Chrome10+,Safari5.1+ */
+					background: -o-linear-gradient(top,  #ffffff 0%,#f4f4f4 100%); /* Opera 11.10+ */
+					background: -ms-linear-gradient(top,  #ffffff 0%,#f4f4f4 100%); /* IE10+ */
+					background: linear-gradient(to bottom,  #ffffff 0%,#f4f4f4 100%); /* W3C */
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-9 */
+				}
+			}
+		}
+	// селекты
+		.select{
+			position: relative;
+			select{
+				display: none;
+			}
+			.stylizselect{
+				a.placeholder{
+					&:hover{
+						text-decoration: none;
+						color: $pink;
+					}
+					text-overflow: ellipsis;
+					overflow: hidden;
+					white-space: nowrap;
+					background: #e74c3c;
+					line-height: 18px;
+					display: block;
+					border-radius: 10px;
+					text-align: center;
+					color: white;
+					height: 20px;
+					position: relative;
+					padding-right: 10px;
+					font-size: 14px;
+					font-weight: 600;
+					&:after{
+						content: "";
+						border: 3px solid transparent;
+						border-top: 5px solid white;
+						position: absolute;
+						top: 8px;
+						right: 10px;
+					}
+				}
+			}
+			&.opened{
+				.dropdown{
+					display: block;
+				}
+			}
+			.dropdown{
+				display: none;
+				position: absolute;
+				z-index: 3;
+				top: 100%;
+				margin-top: 7px;
+				-webkit-box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.45);
+				-moz-box-shadow:    1px 1px 3px 0px rgba(50, 50, 50, 0.45);
+				box-shadow:         1px 1px 3px 0px rgba(50, 50, 50, 0.45);
+				border-radius: 10px;
+				ul{
+					border-radius: 10px;
+					background-color: #f9f9f9;
+					overflow: hidden;
+					text-align: left;
+					li{
+
+						a{
+							span.current-value{
+								&:after{
+									content: ""!important;
+									display: none!important;
+								}
+							}
+							display: block;
+							line-height: 30px;
+							color: $gray;
+							font-size: 15px;
+							padding-left: 20px;
+							padding-right: 20px;
+							&>span{
+								line-height: 30px;
+								height: 100%;
+								padding-top: 7px;
+								width: 100%;
+							}
+							&:hover{
+								text-decoration: none;
+								background: white;
+								span{
+									opacity: 1!important;
+								}
+							}
+							.counter{
+								margin-left: 7px;
+								font-size: 12px;
+								color: #9c9c9c;
+								font-weight: 400;
+								span{
+									font-weight: 600;
+									padding-left: 2px;
+									color: $red;
+								}
+							}
+						}
+					}
+
+				}
+			}
+		}
+
+
+//медиа куерис 
+	@media (max-width: 1070px) {
+		body{
+			.table .row .cell.item-6 span{
+				max-width: 140px;
+			}
+			section .zayavka .client-main-info .table .value{
+				padding-right: 60px;
+			}
+			section .orderform form .viewform p{
+				letter-spacing: -1px;
+			}
+			header{
+				.admin{
+					.auth{
+					 	margin-left: -20px;
+					 	.actions a{
+					 		margin-right: 0px;
+					 		margin-left: 5px;
+					 	}
+					 	.username{
+							max-width: 140px;
+							span{
+								font-size: 16px;
+							}
+				 		} 
+				 	} 
+					nav{
+						position: absolute;
+						left: 50%;
+						margin-left: -26%;
+						top: 36px;
+						.nav{
+							padding: 0 5px;
+							a{
+								margin-left: 6px;
+								.counter {
+									margin-left: 3px;
+									font-size: 10px;
+								}
+								.name{
+									font-style: 14px;
+								}	
+							}							
+						}
+					} 
+				} 
+			}
+		}
+	}
+	@media (max-width: 1020px) {
+		body{
+			
+			section .videoblock .videoblock-textblock{
+				padding-left: 140px;
+			}
+			section .videoblock .video {
+				margin-right: -95px;
+			}
+			section .about{
+				
+				.cell{
+					ul{
+						
+						li{
+							a{
+								font-size: 14px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 1110px) {
+		body{
+			section .zayavka-head .title .zayavka-name{
+				padding-right: 15px;
+				padding-left: 12px;
+				letter-spacing: -1px;
+			}
+			.zayavka-head .g-button span{
+				display: none;
+			}
+			footer .footer-item.footer-item-1{
+				width: 250px;
+			}
+			.content-width{
+				padding: 0 10px;
+			}
+			section .about .cell .about-title,  section .about .cell ul li{
+				padding-left: 10px!important;
+			}
+			.videoblock .list{
+				.item{
+					p{
+						padding-right: 5px;
+					}	
+				}	
+			}	
+		 	header{
+				.auth{
+					margin-left: 5%;
+				}
+				nav{
+					a{
+						margin-left: 15px;
+					}
+					.nav{
+						padding: 0 15px;
+					}
+				}
+			} 
+		}
+	}
+
+ 

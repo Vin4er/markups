@@ -1,0 +1,343 @@
+@media (max-width: 1274px) {
+  /* line 4, ../sass/media.scss */
+  body section .similar:not(.block) .similar-item {
+    text-align: center;
+  }
+  /* line 6, ../sass/media.scss */
+  body section .similar:not(.block) .similar-item .circle {
+    margin-bottom: 10px;
+  }
+  /* line 9, ../sass/media.scss */
+  body section .similar:not(.block) .similar-item .about {
+    display: block;
+  }
+  /* line 11, ../sass/media.scss */
+  body section .similar:not(.block) .similar-item .about .title {
+    margin-bottom: 0px;
+  }
+}
+@media (max-width: 1150px) {
+  /* line 20, ../sass/media.scss */
+  header .auth-block .social span {
+    display: none;
+  }
+
+  /* line 23, ../sass/media.scss */
+  header .username {
+    display: none !important;
+  }
+
+  /* line 28, ../sass/media.scss */
+  body section .padding-scale {
+    padding-top: 120px !important;
+    padding-bottom: 120px !important;
+  }
+  /* line 32, ../sass/media.scss */
+  body section .bg .experts span {
+    display: none;
+  }
+  /* line 35, ../sass/media.scss */
+  body section .ajust-slider .swiper-slide h2 {
+    font-size: 38px;
+  }
+  /* line 38, ../sass/media.scss */
+  body section .ajust-slider .swiper-slide p {
+    font-size: 18px;
+  }
+  /* line 41, ../sass/media.scss */
+  body section .main-title .title h1 {
+    font-size: 55px;
+  }
+  /* line 44, ../sass/media.scss */
+  body section .theydatabase .table .cell {
+    text-align: center;
+  }
+  /* line 46, ../sass/media.scss */
+  body section .theydatabase .table .cell * {
+    text-align: center !important;
+  }
+  /* line 49, ../sass/media.scss */
+  body section .theydatabase .table .cell i {
+    display: block;
+    margin: auto !important;
+  }
+  /* line 54, ../sass/media.scss */
+  body section .about .cell.w60 .cellwrapper .cook-type .table .cell .label, body section .about .cell.w60 .cellwrapper .cook-type .table .cell .value {
+    text-align: center;
+  }
+  /* line 57, ../sass/media.scss */
+  body section .about .cell.w60 .cellwrapper .cook-type .table .cell .wrp {
+    display: block;
+  }
+  /* line 60, ../sass/media.scss */
+  body section .about .cell.w60 .cellwrapper .cook-type .table .cell i {
+    margin-right: 0px;
+  }
+}
+@media (max-width: 1250px) {
+  /* line 69, ../sass/media.scss */
+  body section .about .cell.w40 .book-a-table-btn span {
+    font-size: 20px;
+  }
+  /* line 72, ../sass/media.scss */
+  body section .likeit {
+    padding-top: 100px !important;
+  }
+  /* line 74, ../sass/media.scss */
+  body section .likeit .bg-img {
+    left: 3% !important;
+  }
+  /* line 77, ../sass/media.scss */
+  body section .likeit .loader {
+    position: absolute !important;
+    right: 110% !important;
+    left: auto !important;
+    top: auto !important;
+    bottom: 18px !important;
+  }
+  /* line 84, ../sass/media.scss */
+  body section .likeit .fr {
+    width: 60% !important;
+    min-width: 550px;
+  }
+  /* line 88, ../sass/media.scss */
+  body section .likeit .bot {
+    text-align: center;
+    width: 100% !important;
+  }
+  /* line 91, ../sass/media.scss */
+  body section .likeit .bot .grd-btn {
+    float: none !important;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 100% !important;
+  }
+  /* line 101, ../sass/media.scss */
+  body section .presentation-blocks h2 {
+    margin-top: 0px !important;
+  }
+  /* line 105, ../sass/media.scss */
+  body section .presentation-blocks.left .bg-img {
+    right: 7% !important;
+  }
+  /* line 108, ../sass/media.scss */
+  body section .presentation-blocks.left .fr {
+    width: 60% !important;
+    min-width: 540px;
+  }
+  /* line 114, ../sass/media.scss */
+  body section .presentation-blocks.right .bg-img {
+    left: 3% !important;
+  }
+  /* line 117, ../sass/media.scss */
+  body section .presentation-blocks.right .fr {
+    width: 60% !important;
+    min-width: 540px;
+  }
+  /* line 123, ../sass/media.scss */
+  body section .reservation, body section .expert {
+    padding-top: 100px !important;
+  }
+  /* line 125, ../sass/media.scss */
+  body section .reservation .search-reservation, body section .reservation .grd-btn, body section .expert .search-reservation, body section .expert .grd-btn {
+    margin-bottom: 30px;
+    width: 420px;
+  }
+  /* line 129, ../sass/media.scss */
+  body section .reservation .fr, body section .expert .fr {
+    width: 60% !important;
+    min-width: 540px;
+  }
+}
+@media (max-width: 1180px) {
+  /* line 145, ../sass/media.scss */
+  body section .padding-scale {
+    padding-top: 160px !important;
+    padding-bottom: 160px !important;
+  }
+  /* line 151, ../sass/media.scss */
+  body section.map-item .sort-price a {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  /* line 158, ../sass/media.scss */
+  body section.map-item .search-counter {
+    min-width: 130px;
+  }
+  /* line 160, ../sass/media.scss */
+  body section.map-item .search-counter .counter {
+    font-weight: bold;
+  }
+  /* line 165, ../sass/media.scss */
+  body section .about .cell.w40 .book-a-table-btn .txt .title {
+    text-align: center;
+  }
+}
+@media (max-width: 1110px) {
+  /* line 183, ../sass/media.scss */
+  body section .autobron {
+    overflow: hidden;
+    height: 750px;
+  }
+  /* line 186, ../sass/media.scss */
+  body section .autobron .partnets-list {
+    margin-top: -40px;
+  }
+  /* line 189, ../sass/media.scss */
+  body section .autobron .img {
+    border-radius: 50%;
+    width: 170px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 14px;
+    margin-right: 14px;
+    background: #fff;
+    height: 170px;
+    line-height: 170px;
+    vertical-align: middle;
+    text-align: center;
+  }
+  /* line 202, ../sass/media.scss */
+  body section .autobron .ipad {
+    height: 690px;
+    left: -5%;
+    background-position: right 190px;
+    background-size: contain;
+  }
+}
+@media (max-width: 1220px) {
+  /* line 216, ../sass/media.scss */
+  body section .autobron {
+    overflow: hidden;
+  }
+  /* line 226, ../sass/media.scss */
+  body section.expert-item .expert-data .w40 .table .cell {
+    padding: 0;
+  }
+  /* line 229, ../sass/media.scss */
+  body section.expert-item .expert-data .w40 .table i {
+    margin-right: 0;
+    display: block;
+    margin: auto;
+  }
+  /* line 234, ../sass/media.scss */
+  body section.expert-item .expert-data .w40 .table .txt {
+    text-align: center;
+  }
+  /* line 236, ../sass/media.scss */
+  body section.expert-item .expert-data .w40 .table .txt > * {
+    text-align: center;
+  }
+}
+@media (max-width: 1280px) {
+  /* line 245, ../sass/media.scss */
+  section .read-item:last-child, section .read-item:nth-child(5n), .modal-wrapper .read-item:last-child, .modal-wrapper .read-item:nth-child(5n) {
+    border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+
+  /* line 250, ../sass/media.scss */
+  body section.map-item .similar-items .similar-item {
+    display: block;
+    margin-left: 0px !important;
+    width: 100%;
+  }
+
+  /* line 263, ../sass/media.scss */
+  body header .fr .search-header input[type=text] {
+    vertical-align: middle;
+    width: 200px;
+  }
+}
+@media (max-width: 1490px) {
+  /* line 274, ../sass/media.scss */
+  body section.map-item .similar-items .similar-item .table .cell {
+    width: auto;
+  }
+  /* line 277, ../sass/media.scss */
+  body section.map-item .similar-items .similar-item .table .cell * {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 14px !important;
+    font-size: 14px !important;
+    word-wrap: break-word;
+  }
+}
+@media (max-width: 1490px) {
+  /* line 298, ../sass/media.scss */
+  body section.map-item .similar:not(.block) .similar-items .similar-item .table .cell * {
+    font-size: 15px;
+  }
+  /* line 302, ../sass/media.scss */
+  body section.map-item .similar:not(.block) .similar-item .circle {
+    margin: auto;
+  }
+  /* line 305, ../sass/media.scss */
+  body section.map-item .similar:not(.block) .similar-item {
+    padding: 6px;
+  }
+}
+@media (max-width: 1410px) {
+  /* line 317, ../sass/media.scss */
+  section .big-big-block .cups .img, .modal-wrapper .big-big-block .cups .img {
+    right: -6%;
+  }
+}
+@media (max-width: 1400px) {
+  /* line 322, ../sass/media.scss */
+  section .presentation-blocks.reservation .bg-img:after, .modal-wrapper .presentation-blocks.reservation .bg-img:after {
+    top: -40px;
+  }
+
+  /* line 330, ../sass/media.scss */
+  body section.map-item .search-content-block .search-filter .cell .cellwrapper {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  /* line 334, ../sass/media.scss */
+  body section.map-item .search-content-block .search-filter .item-3 {
+    min-width: 120px;
+    max-width: 80px !important;
+  }
+}
+@media (max-width: 1330px) {
+  /* line 344, ../sass/media.scss */
+  body header .search-header input[type=text] {
+    vertical-align: middle;
+    width: 300px;
+  }
+}
+@media (max-width: 1200px) {
+  /* line 350, ../sass/media.scss */
+  section .big-big-block .cups .img, .modal-wrapper .big-big-block .cups .img {
+    right: -350px;
+  }
+
+  /* line 353, ../sass/media.scss */
+  section .big-big-block .img-right p, .modal-wrapper .big-big-block .img-right p {
+    padding-right: 50%;
+  }
+
+  /* line 356, ../sass/media.scss */
+  section .big-big-block .img-left h4, .modal-wrapper .big-big-block .img-left h4 {
+    padding-left: 40%;
+    text-align: left !important;
+  }
+
+  /* line 360, ../sass/media.scss */
+  section .big-big-block .control-zacup p, .modal-wrapper .big-big-block .control-zacup p {
+    padding-left: 40%;
+  }
+}
+@media (max-width: 1110px) {
+  /* line 365, ../sass/media.scss */
+  section .big-big-block .coffe .img, .modal-wrapper .big-big-block .coffe .img {
+    width: 50%;
+    background-size: contain;
+  }
+
+  /* line 369, ../sass/media.scss */
+  section .big-big-block .buggete .img, .modal-wrapper .big-big-block .buggete .img {
+    right: -13%;
+  }
+}
